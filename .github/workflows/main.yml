@@ -1,26 +1,30 @@
-name: Deploy Bucig Shop Web
+name: Bucig Shop Web
 
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.14.0"
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-central-1
-      - name: Install modules
-        run: yarn
-      - name: Build application
-        run: yarn build
-      - name: Deploy to S3
-        run: aws s3 sync ./out s3://${{ secrets.BUCKET_ID }}
+      - name: Copy files to S3 with the AWS CLI
+        run: |
+          aws s3 sync ./out s3://${{ secrets.BUCKET_ID }}
       - name: Create CloudFront invalidation
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
