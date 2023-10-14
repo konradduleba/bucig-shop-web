@@ -2,15 +2,14 @@ name: Deploy Bucig Shop Web
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -22,6 +21,6 @@ jobs:
       - name: Build application
         run: yarn build
       - name: Deploy to S3
-        run: aws s3 sync out s3://${{ secrets.BUCKET_ID }}
+        run: aws s3 sync ./out s3://${{ secrets.BUCKET_ID }}
       - name: Create CloudFront invalidation
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
