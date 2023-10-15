@@ -1,0 +1,56 @@
+@use './breakpoints' as *;
+
+@mixin form-container($grid-gap: 24px) {
+  display: grid;
+  row-gap: $grid-gap;
+}
+
+@mixin text-ellipsis($max-width: 100%) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: $max-width;
+  white-space: nowrap;
+}
+
+@mixin visible-on-mobile-only {
+  @include for-tablet-up {
+    display: none;
+  }
+}
+
+@mixin visible-on-tablet-up($display: unset) {
+  display: none;
+  @include for-tablet-up {
+    display: $display;
+  }
+}
+
+@mixin visible-on-desktop-up($display: unset) {
+  display: none;
+  @include for-desktop-up {
+    display: $display;
+  }
+}
+
+@mixin text-ellipsis-lines($number-of-lines: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $number-of-lines;
+  line-clamp: $number-of-lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin hide-scrollbars {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin gap-container($gap) {
+  display: grid;
+  row-gap: $gap;
+}

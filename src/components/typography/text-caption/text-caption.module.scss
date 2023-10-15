@@ -1,0 +1,32 @@
+@use '@styles/breakpoints' as *;
+
+.capitalized {
+  text-transform: uppercase;
+}
+
+.xs {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.sm {
+  font-size: 11px;
+  line-height: 13px;
+
+  &.capitalized {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  @include for-tablet-up() {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.fontRegular {
+  font-weight: 400;
+}
+.fontMedium {
+  font-weight: 500;
+}
