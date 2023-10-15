@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier ./src/* --write",
+    "check-style": "prettier ./src/* --check"
   },
   "dependencies": {
     "@commitlint/cli": "17.8.0",
@@ -22,7 +24,15 @@
     "@types/react-dom": "18",
     "eslint": "8",
     "eslint-config-next": "13.5.4",
+    "eslint-config-prettier": "9.0.0",
     "husky": "8.0.3",
+    "prettier": "3.0.3",
     "typescript": "5"
+  },
+  "lint-staged": {
+    "*.{ts, d.ts,tsx,css,scss,html,json}": [
+      "yarn format",
+      "yarn check-style"
+    ]
   }
 }
