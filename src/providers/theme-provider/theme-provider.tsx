@@ -6,19 +6,27 @@ import { getTheme, toggleTheme } from './theme-helpers';
 import { Theme } from '@types';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(getTheme());
+  const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.LIGHT);
 
   const toggleCurrentTheme = () => {
     setCurrentTheme((prevTheme: Theme) => {
       const newTheme = prevTheme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
 
+      toggleTheme(newTheme);
       return newTheme;
     });
   };
 
   useEffect(() => {
-    toggleTheme(currentTheme);
-  }, [currentTheme]);
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const theme = getTheme();
+
+    setCurrentTheme(theme);
+    toggleTheme(theme);
+  }, []);
 
   const value = useMemo(
     () => ({
