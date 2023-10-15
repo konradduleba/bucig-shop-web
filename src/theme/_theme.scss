@@ -1,7 +1,6 @@
 @use './theme-variables' as *;
 // DEFINE ANIMATIONS
 :root {
-
   // animation
   --short-animation-duration: #{$short-animation-duration};
   --animation-easing: #{$animation-easing};
