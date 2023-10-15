@@ -1,0 +1,23 @@
+/* *** PRIMARY *** */
+$primary-1-light: #e7953a !default;
+$primary-1-dark: #1e2834 !default;
+
+/* *** STATUS *** */
+$status-error-light: #ed5249 !default;
+$status-error-dark: #ff7d76 !default;
+$status-success-light: #6ba348 !default;
+$status-success-dark: #93ba7a !default;
+$status-info-light: #2196f3 !default;
+$status-info-dark: #2196f3 !default;
+
+/* *** TRANSPARENT *** */
+$transparent-1-light: rgba(255, 255, 255, 0.15) !default;
+$transparent-1-dark: rgba(255, 255, 255, 0.15) !default;
+
+/* *** ANIMATIONS *** */
+$short-animation-duration: 0.2s !default;
+$animation-easing: ease !default;
+
+/* *** TRANSITION *** */
+$transition-short: all 100ms ease-in !default;
+$transition-medium: all 200ms ease-out !default;
