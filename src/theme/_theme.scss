@@ -1,0 +1,39 @@
+@use './theme-variables' as *;
+// DEFINE ANIMATIONS
+:root {
+
+  // animation
+  --short-animation-duration: #{$short-animation-duration};
+  --animation-easing: #{$animation-easing};
+  --transition-short: #{$transition-short};
+  --transition-medium: #{$transition-medium};
+}
+
+// DEFINE COLORS FOR LIGHT MODE
+:root,
+.light {
+  // primary
+  --primary-1: #{$primary-1-light};
+
+  // status
+  --status-error: #{$status-error-light};
+  --status-success: #{$status-success-light};
+  --status-info: #{$status-info-light};
+
+  // transparent
+  --transparent-1: #{$transparent-1-light};
+}
+
+// DEFINE COLORS FOR DARK MODE
+.dark {
+  // primary
+  --primary-1: #{$primary-1-dark};
+
+  // status
+  --status-error: #{$status-error-dark};
+  --status-success: #{$status-success-dark};
+  --status-info: #{$status-info-dark};
+
+  // transparent
+  --transparent-1: #{$transparent-1-dark};
+}
