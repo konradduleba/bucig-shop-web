@@ -1,0 +1,53 @@
+@import '~normalize.css/normalize';
+
+// 3. Include the theme
+@import '@theme/theme';
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+body {
+  background-color: var(--primary-1);
+
+  &.disableScroll {
+    overflow: hidden !important;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-1);
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--status-error);
+  border-radius: 40px;
+}

@@ -1,0 +1,42 @@
+@use '@styles/breakpoints' as *;
+
+.textBody {
+  font-weight: 400;
+}
+
+.textSizeSm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.textSizeMd {
+  font-size: 14px;
+  line-height: 20px;
+
+  @include for-tablet-up() {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.textSizeLg {
+  font-size: 16px;
+  line-height: 24px;
+
+  @include for-tablet-up() {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.fontWeightMedium {
+  font-weight: 500;
+}
+
+.fontWeightSemiBold {
+  font-weight: 600;
+}
+
+.fontWeightBold {
+  font-weight: 700;
+}

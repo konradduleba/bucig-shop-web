@@ -1,0 +1,10 @@
+@mixin button-reset {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: unset;
+  }
+}
