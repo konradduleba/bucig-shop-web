@@ -1,26 +1,41 @@
-.text {
-  font-weight: 400;
+.textSmall {
+  --font-size: 12px;
+  --line-height: 12px;
+  --font-color: var(--font-color-gray);
+  --font-weight: 300;
+
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--font-color);
+  font-weight: var(--font-weight);
 }
 
-.textSizeXs {
-  font-size: 12px !important;
-  line-height: 14px;
+.size12 {
+  --font-size: 12px;
+  --line-height: 12px;
 }
 
-.textSizeSm {
-  font-size: 14px;
-  line-height: 24px;
+.size14 {
+  --font-size: 14px;
+  --line-height: 14px;
 }
 
-.textSizeMd {
-  font-size: 16px;
-  line-height: 24px;
+.size16 {
+  --font-size: 16px;
+  --line-height: 16px;
 }
 
-.fontWeightMedium {
-  font-weight: 500;
+.size18 {
+  --font-size: 18px;
+  --line-height: 18px;
 }
 
-.fontWeightBold {
-  font-weight: 700;
+.size20 {
+  --font-size: 20px;
+  --line-height: 20px;
+}
+
+.secondary {
+  --font-color: var(--font-color-default);
+  --font-weight: 400;
 }

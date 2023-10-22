@@ -1,48 +1,48 @@
 import cn from 'classnames';
-import type { ReactNode, FC } from 'react';
+import type { ReactNode } from 'react';
 
 import styles from './text.module.scss';
 
-type Size = 'xs' | 'sm' | 'md';
-type FontWeight = 'regular' | 'medium' | 'bold';
-
+type TextSize = '12' | '14' | '16' | '18' | '20';
+type TextOption = 'primary' | 'secondary';
 export interface TextProps {
   children: ReactNode;
-  size: Size;
-  fontWeight?: FontWeight;
+  size: TextSize;
+  option?: TextOption;
   className?: string;
 }
 
-const FONT_SIZE: Record<Size, string> = {
-  xs: styles.textSizeXs,
-  sm: styles.textSizeSm,
-  md: styles.textSizeMd,
+const SIZE_CLASS: Record<TextSize, string> = {
+  12: styles.size12,
+  14: styles.size14,
+  16: styles.size16,
+  18: styles.size18,
+  20: styles.size20,
 };
 
-const FONT_WEIGHT: Record<FontWeight, string> = {
-  regular: '',
-  medium: styles.fontWeightMedium,
-  bold: styles.fontWeightBold,
+const OPTION_CLASS: Record<TextOption, string> = {
+  primary: styles.primary,
+  secondary: styles.secondary,
 };
 
-const Text: FC<TextProps> = ({
+export function Text({
   children,
   size,
-  fontWeight = 'regular',
   className,
-}: TextProps) => {
+  option = 'primary',
+}: TextProps) {
   return (
-    <span
+    <p
       className={cn(
-        styles.text,
-        FONT_SIZE[size],
-        FONT_WEIGHT[fontWeight],
+        styles.textSmall,
+        SIZE_CLASS[size],
+        OPTION_CLASS[option],
         className,
       )}
     >
       {children}
-    </span>
+    </p>
   );
-};
+}
 
 export default Text;

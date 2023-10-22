@@ -1,32 +1,26 @@
 @use './theme-variables' as *;
-// DEFINE ANIMATIONS
+@use './theme-dark' as *;
+
 :root {
-  // animation
   --short-animation-duration: #{$short-animation-duration};
   --animation-easing: #{$animation-easing};
   --transition-short: #{$transition-short};
   --transition-medium: #{$transition-medium};
-}
 
-// DEFINE COLORS FOR LIGHT MODE
-:root,
-.light {
-  // primary
-  --primary-1: #{$primary-1-light};
-
-  // status
-  --status-error: #{$status-error-light};
-  --status-success: #{$status-success-light};
-  --status-info: #{$status-info-light};
-
-  // transparent
-  --transparent-1: #{$transparent-1-light};
+  --transparent-glass: #{$transparent-glass};
 }
 
 // DEFINE COLORS FOR DARK MODE
+:root,
 .dark {
   // primary
   --primary-1: #{$primary-1-dark};
+  --primary-2: #{$primary-2-dark};
+
+  // font colors
+  --font-color-inactive: #{$font-color-inactive};
+  --font-color-default: #{$font-color-default};
+  --font-color-gray: #{$font-color-gray};
 
   // status
   --status-error: #{$status-error-dark};
@@ -34,5 +28,8 @@
   --status-info: #{$status-info-dark};
 
   // transparent
-  --transparent-1: #{$transparent-1-dark};
+  --transparent-1: #{$transparent-1};
+
+  // borders
+  --border-rgb: #{$border-1-dark};
 }

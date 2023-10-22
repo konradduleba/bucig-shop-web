@@ -11,6 +11,12 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --icon-default-width: 40px;
+  --icon-default-height: 40px;
+  color: var(--font-color-default);
+}
+
 p,
 h1,
 h2,
@@ -48,6 +54,6 @@ ul {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--status-error);
+  background: var(--border-rgb);
   border-radius: 40px;
 }

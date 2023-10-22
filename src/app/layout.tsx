@@ -1,11 +1,11 @@
 import { FC, PropsWithChildren } from 'react';
-import { Inter } from 'next/font/google';
-import { Footer, MainContent, Navigation } from '@layouts';
+import { Montserrat } from 'next/font/google';
+import { LeftSideMenu, MainContent } from '@layouts';
 import { ThemeProvider } from '@providers';
 
 import '@styles/global.scss';
 
-const inter = Inter({
+const inter = Montserrat({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   subsets: ['latin'],
@@ -16,9 +16,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
     <html lang="en" className={inter.className}>
       <body>
         <ThemeProvider>
-          <Navigation />
+          <LeftSideMenu />
+          {/* <Navigation />*/}
           <MainContent>{children}</MainContent>
-          <Footer />
+          {/*<Footer /> */}
         </ThemeProvider>
       </body>
     </html>

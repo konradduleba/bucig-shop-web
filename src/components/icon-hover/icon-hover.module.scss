@@ -1,0 +1,14 @@
+.container {
+  width: var(--icon-default-width);
+  height: var(--icon-default-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: var(--transition-medium);
+
+  &:hover {
+    background-color: var(--transparent-1);
+    cursor: pointer;
+  }
+}
