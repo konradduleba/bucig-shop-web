@@ -11,12 +11,12 @@ export const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <Typography.Lead size="lg">Footer</Typography.Lead>
+      <Typography.Text size="20">Footer</Typography.Text>
       <ul>
         {menuRoutes.map(({ href, name }: MenuRoute) => (
           <li key={name}>
             <Link href={href}>
-              <Typography.Text size="sm">{name}</Typography.Text>
+              <Typography.Text size="14">{name}</Typography.Text>
             </Link>
           </li>
         ))}

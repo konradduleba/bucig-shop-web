@@ -11,7 +11,7 @@ export const Navigation: FC = () => {
 
   return (
     <nav className={styles.navigation}>
-      {/* <Typography.Lead size="lg">Navigation</Typography.Lead> */}
+      <Typography.Text size="20">Navigation</Typography.Text>
       <ul>
         {menuRoutes.map(({ href, name }: MenuRoute) => (
           <li key={name}>
