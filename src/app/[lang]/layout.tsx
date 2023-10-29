@@ -1,7 +1,5 @@
-import { FC, PropsWithChildren, ReactNode } from 'react';
-import { Inter } from 'next/font/google';
-import { Footer, MainContent, Navigation } from '@layouts';
-import { ThemeProvider } from '@providers';
+import { FC, ReactNode } from 'react';
+import { Montserrat } from 'next/font/google';
 
 import '@styles/global.scss';
 import { Locales } from '../../i18n/i18n-types';
@@ -9,7 +7,7 @@ import { loadLocaleAsync } from '../../i18n/i18n-util.async';
 import { baseLocale, loadedLocales } from '../../i18n/i18n-util';
 import ClientComponent from './layoutClient';
 
-const inter = Inter({
+const inter = Montserrat({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   subsets: ['latin'],
