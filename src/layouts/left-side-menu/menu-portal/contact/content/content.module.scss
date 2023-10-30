@@ -1,0 +1,17 @@
+.content {
+  display: grid;
+  gap: 14px;
+  grid-template-rows: 34px 1fr;
+  align-self: flex-start;
+  padding-top: var(--info-padding-top);
+  justify-items: center;
+}
+
+.twoLinesInfo {
+  display: grid;
+  gap: 14px;
+}
+
+.info {
+  color: var(--color-primary);
+}

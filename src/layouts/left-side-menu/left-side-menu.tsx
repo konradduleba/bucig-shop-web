@@ -1,9 +1,10 @@
 import { FC } from 'react';
 
-import styles from './left-side-menu.module.scss';
+import { Menu } from './menu/menu';
 import { ExternalLinks } from './external-links/external-links';
 import { LanguageChanger } from './language-changer/language-changer';
-import { Menu } from './menu/menu';
+
+import styles from './left-side-menu.module.scss';
 
 export const LeftSideMenu: FC = () => {
   return (

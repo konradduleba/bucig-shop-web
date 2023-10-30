@@ -3,49 +3,47 @@ import type { ReactNode } from 'react';
 
 import styles from './heading.module.scss';
 
-type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
-
-type FontWeightVariants =
-  | 'regular'
-  | 'medium'
-  | 'semiBold'
-  | 'bold'
-  | 'inherit';
-
+type HeadingSize = '24' | '30' | '36' | '42' | '48' | '54';
+type HeadingOption = 'primary' | 'secondary';
 export interface HeadingProps {
-  as: HeadingElement;
   children: ReactNode;
+  size: HeadingSize;
+  option?: HeadingOption;
   className?: string;
-  fontWeight?: FontWeightVariants;
 }
 
-const FONT_WEIGHT_MAPPER = {
-  regular: styles.headingRegular,
-  medium: styles.headingMedium,
-  semiBold: styles.headingSemiBold,
-  bold: styles.headingBold,
-  inherit: styles.headingInherit,
+const SIZE_CLASS: Record<HeadingSize, string> = {
+  24: styles.size24,
+  30: styles.size30,
+  36: styles.size36,
+  42: styles.size42,
+  48: styles.size48,
+  54: styles.size54,
 };
 
-export const Heading = ({
-  className,
-  children,
-  as,
-  fontWeight = 'inherit',
-}: HeadingProps) => {
-  const Element = as;
+const OPTION_CLASS: Record<HeadingOption, string> = {
+  primary: styles.primary,
+  secondary: styles.secondary,
+};
 
+export function Heading({
+  children,
+  size,
+  className,
+  option = 'primary',
+}: HeadingProps) {
   return (
-    <Element
-      className={cn(className, styles.heading, FONT_WEIGHT_MAPPER[fontWeight], {
-        [styles.headingLevel1]: as === 'h1',
-        [styles.headingLevel2]: as === 'h2',
-        [styles.headingLevel3]: as === 'h3',
-        [styles.headingLevel4]: as === 'h4',
-        [styles.headingLevel5]: as === 'h5',
-      })}
+    <p
+      className={cn(
+        styles.heading,
+        SIZE_CLASS[size],
+        OPTION_CLASS[option],
+        className,
+      )}
     >
       {children}
-    </Element>
+    </p>
   );
-};
+}
+
+export default Heading;

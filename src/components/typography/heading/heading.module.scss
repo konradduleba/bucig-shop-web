@@ -1,100 +1,45 @@
-@use '@styles/breakpoints' as *;
-
 .heading {
-  color: inherit;
+  --font-size: 24px;
+  --line-height: 24px;
+  --font-color: var(--font-color-gray);
+  --font-weight: 200;
+
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--font-color);
+  font-weight: var(--font-weight);
 }
 
-.headingRegular {
-  font-weight: 400;
+.size24 {
+  --font-size: 24px;
+  --line-height: 24px;
 }
 
-.headingMedium {
-  font-weight: 500;
+.size30 {
+  --font-size: 30px;
+  --line-height: 30px;
 }
 
-.headingSemiBold {
-  font-weight: 600;
+.size36 {
+  --font-size: 36px;
+  --line-height: 36px;
 }
 
-.headingBold {
-  font-weight: 700;
+.size42 {
+  --font-size: 42px;
+  --line-height: 42px;
 }
 
-.headingInherit {
-  font-weight: inherit;
+.size48 {
+  --font-size: 48px;
+  --line-height: 48px;
 }
 
-.headingLevel1 {
-  font-size: 22px;
-  line-height: 30px;
-
-  @include for-tablet-up() {
-    font-size: 26px;
-    line-height: 32px;
-  }
-
-  @include for-desktop-up() {
-    font-size: 36px;
-    line-height: 45px;
-  }
+.size54 {
+  --font-size: 54px;
+  --line-height: 54px;
 }
 
-.headingLevel2 {
-  font-size: 18px;
-  line-height: 27px;
-
-  @include for-tablet-up() {
-    font-size: 22px;
-    line-height: 30px;
-  }
-
-  @include for-desktop-up() {
-    font-size: 26px;
-    line-height: 32px;
-  }
-}
-
-.headingLevel3 {
-  font-size: 16px;
-  line-height: 24px;
-
-  @include for-tablet-up() {
-    font-size: 18px;
-    line-height: 27px;
-  }
-
-  @include for-desktop-up() {
-    font-size: 22px;
-    line-height: 30px;
-  }
-}
-
-.headingLevel4 {
-  font-size: 14px;
-  line-height: 20px;
-
-  @include for-tablet-up() {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  @include for-desktop-up() {
-    font-size: 18px;
-    line-height: 27px;
-  }
-}
-
-.headingLevel5 {
-  font-size: 14px;
-  line-height: 20px;
-
-  @include for-tablet-up() {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  @include for-desktop-up() {
-    font-size: 16px;
-    line-height: 24px;
-  }
+.secondary {
+  --font-color: var(--font-color-default);
 }

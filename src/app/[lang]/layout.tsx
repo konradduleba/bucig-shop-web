@@ -8,7 +8,7 @@ import { baseLocale, loadedLocales } from '../../i18n/i18n-util';
 import ClientComponent from './layoutClient';
 
 const inter = Montserrat({
-  weight: ['400', '500', '600', '700'],
+  weight: ['200', '300', '400', '700'],
   display: 'swap',
   subsets: ['latin'],
 });
