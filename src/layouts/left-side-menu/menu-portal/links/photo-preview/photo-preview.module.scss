@@ -1,0 +1,23 @@
+.wrapper {
+  grid-column-start: 3;
+  grid-column-end: 6;
+
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.activeImage {
+  z-index: 1;
+}

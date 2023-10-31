@@ -27,7 +27,8 @@
       "@theme/*": ["./src/theme/*"],
       "@styles/*": ["./src/styles/*"],
       "@icons/*": ["./src/icons/*"],
-      "@providers": ["./src/providers/index.ts"]
+      "@providers": ["./src/providers/index.ts"],
+      "@i18n/*": ["./src/i18n/*"]
     }
   },
   "include": [

@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
 import { useGetMenuRoutes } from '../hooks';
+
 import { MenuRoute } from '@types';
 import Typography from '@components/typography';
-import Link from 'next/link';
+import CustomLink from '@components/custom-link/custom-link';
 
 import styles from './navigation.module.scss';
 
@@ -15,9 +17,9 @@ export const Navigation: FC = () => {
       <ul>
         {menuRoutes.map(({ href, name }: MenuRoute) => (
           <li key={name}>
-            <Link href={href}>
+            <CustomLink href={href}>
               <Typography.Text size="12">{name}</Typography.Text>
-            </Link>
+            </CustomLink>
           </li>
         ))}
       </ul>

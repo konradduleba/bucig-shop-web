@@ -34,7 +34,7 @@ export function Text({
   return (
     <p
       className={cn(
-        styles.textSmall,
+        styles.text,
         SIZE_CLASS[size],
         OPTION_CLASS[option],
         className,

@@ -1,0 +1,15 @@
+.link {
+  width: fit-content;
+}
+
+.label {
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.active {
+  color: var(--color-primary);
+}

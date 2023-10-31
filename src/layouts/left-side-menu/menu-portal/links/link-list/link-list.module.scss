@@ -1,0 +1,32 @@
+.container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  border-right: 1px solid var(--border-rgb);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  display: grid;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.link {
+  width: fit-content;
+}
+
+.label {
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.active {
+  color: var(--color-primary);
+}

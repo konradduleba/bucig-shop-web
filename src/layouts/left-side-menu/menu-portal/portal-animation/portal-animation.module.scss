@@ -1,0 +1,15 @@
+.container {
+  --info-height: 150px;
+  --info-padding-top: 15px;
+
+  position: fixed;
+  top: 0;
+  left: var(--desktop-menu-width);
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: var(--transparent-glass);
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-rows: 1fr calc(var(--info-padding-top) + var(--info-height));
+}

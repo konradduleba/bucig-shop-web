@@ -9,11 +9,13 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 :root {
   --icon-default-width: 40px;
   --icon-default-height: 40px;
+  --desktop-menu-width: 70px;
   color: var(--font-color-default);
 }
 

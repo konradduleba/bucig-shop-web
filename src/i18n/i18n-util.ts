@@ -22,7 +22,7 @@ import type {
 
 export const baseLocale: Locales = 'pl';
 
-export const locales: Locales[] = ['de', 'en', 'pl'];
+export const locales: Locales[] = ['en', 'pl'];
 
 export const isLocale = (locale: string): locale is Locales =>
   locales.includes(locale as Locales);
