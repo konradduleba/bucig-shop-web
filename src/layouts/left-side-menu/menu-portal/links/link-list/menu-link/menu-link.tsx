@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import cn from 'classnames';
-import Link, { LinkProps } from 'next/link';
+
+import CustomLink, { LinkProps } from '@components/custom-link/custom-link';
 import Typography from '@components/typography';
 
 import styles from './menu-link.module.scss';
@@ -18,7 +19,7 @@ export const MenuLink: FC<PropsWithChildren<MenuLinkProps>> = ({
 }) => {
   return (
     <li onMouseEnter={onMouseEnter} className={styles.link}>
-      <Link href={href}>
+      <CustomLink href={href}>
         <Typography.Heading
           size="36"
           className={cn(styles.label, {
@@ -27,7 +28,7 @@ export const MenuLink: FC<PropsWithChildren<MenuLinkProps>> = ({
         >
           {children}
         </Typography.Heading>
-      </Link>
+      </CustomLink>
     </li>
   );
 };

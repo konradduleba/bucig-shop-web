@@ -4,19 +4,16 @@ import { TextLine } from './text-line';
 
 import styles from './content.module.scss';
 
-export interface OneLineContentProps {
+interface OneLineContentProps {
   icon: JSX.Element;
-  contentTranslationKey: string; //@TODO Update after implementing i18n;
+  line: string; //@TODO Update after implementing i18n;
 }
 
-export const OneLineContent: FC<OneLineContentProps> = ({
-  contentTranslationKey,
-  icon,
-}) => {
+export const OneLineContent: FC<OneLineContentProps> = ({ line, icon }) => {
   return (
     <div className={styles.content}>
       {icon}
-      <TextLine>{contentTranslationKey}</TextLine>
+      <TextLine>{line}</TextLine>
     </div>
   );
 };

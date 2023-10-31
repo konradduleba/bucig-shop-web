@@ -1,13 +1,6 @@
 import { ReactNode } from 'react';
-import { OneLineContentProps } from './content/one-line';
-import { TwoLinesContentProps } from './content/two-lines';
 import { LinkProps } from 'next/link';
-
-export enum ContactContentTypes {
-  ONE_LINE = 'one-line',
-  TWO_LINES = 'two-lines',
-  CHILDREN = 'children',
-}
+import { CustomLinkProps } from '@components/custom-link/custom-link';
 
 export enum ContactIds {
   MAIL = 'mail',
@@ -17,21 +10,8 @@ export enum ContactIds {
   MESSAGE = 'message',
 }
 
-interface CommonContactProps {
+export type ContactContent = CustomLinkProps & {
   id: ContactIds;
   href: LinkProps['href'];
-}
-
-export type ContactContent = CommonContactProps &
-  (
-    | ({
-        type: ContactContentTypes.ONE_LINE;
-      } & OneLineContentProps)
-    | ({
-        type: ContactContentTypes.TWO_LINES;
-      } & TwoLinesContentProps)
-    | {
-        type: ContactContentTypes.CHILDREN;
-        children: ReactNode;
-      }
-  );
+  children: ReactNode;
+};

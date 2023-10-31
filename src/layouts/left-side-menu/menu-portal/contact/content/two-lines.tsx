@@ -4,23 +4,23 @@ import { TextLine } from './text-line';
 
 import styles from './content.module.scss';
 
-export interface TwoLinesContentProps {
+interface TwoLinesContentProps {
   icon: JSX.Element;
-  firstContentTranslationKey: string; //@TODO Update after implementing i18n;
-  secondContentTranslationKey: string; //@TODO Update after implementing i18n;
+  firstLine: string;
+  secondLine: string;
 }
 
 export const TwoLinesContent: FC<TwoLinesContentProps> = ({
-  firstContentTranslationKey,
-  secondContentTranslationKey,
+  firstLine,
+  secondLine,
   icon,
 }) => {
   return (
     <div className={styles.content}>
       {icon}
       <div className={styles.twoLinesInfo}>
-        <TextLine>{firstContentTranslationKey}</TextLine>
-        <TextLine>{secondContentTranslationKey}</TextLine>
+        <TextLine>{firstLine}</TextLine>
+        <TextLine>{secondLine}</TextLine>
       </div>
     </div>
   );

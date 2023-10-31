@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 
-import { MENU_LINK_ELEMENTS } from '../links.consts';
 import { ActivePhotoHook, MenuLink } from '../links.types';
 import { getNewMenuOrder } from '../helpers/get-new-menu-order';
+import { useGetMenuList } from '../hooks/useGetMenuList';
 
 import { PreviewAnimation } from './preview-animation/preview-animation';
 import { PreviewImage } from './preview-image/preview-image';
@@ -13,13 +13,14 @@ export const PhotoPreview: FC<Pick<ActivePhotoHook, 'activePhoto'>> = ({
   activePhoto,
 }) => {
   const { id: activePhotoKey, imageRef, label } = activePhoto;
+  const { menuListWithFallback } = useGetMenuList();
 
-  const [menu, setMenu] = useState<MenuLink[]>(MENU_LINK_ELEMENTS);
+  const [menu, setMenu] = useState<MenuLink[]>([]);
 
   const onAnimationComplete = () => {
-    setMenu((prevMenu: MenuLink[]) => {
-      return getNewMenuOrder(prevMenu, activePhotoKey);
-    });
+    const newOrder = getNewMenuOrder(menuListWithFallback, activePhotoKey);
+
+    setMenu(newOrder);
   };
 
   return (

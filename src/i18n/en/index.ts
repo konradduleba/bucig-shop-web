@@ -1,8 +1,19 @@
-import type { BaseTranslation } from '../i18n-types';
+import type { Translation } from '../i18n-types';
 
-const en = {
-  // TODO: your translations go here
-  HI: 'Hi {name:string}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n',
-} satisfies BaseTranslation;
+const en: Translation = {
+  MENU: {
+    JOIN_US: 'Join us',
+    CONFIGURATOR: 'Configurator',
+    LINK: '/en{0}',
+    FALLBACK: 'Fallback',
+  },
+  HOURS: {
+    MON_FRI: 'Mon-Fri',
+    SAT: 'Sat',
+  },
+  COMMON: {
+    WRITE_A_MESSAGE: 'Write a message',
+  },
+};
 
 export default en;
