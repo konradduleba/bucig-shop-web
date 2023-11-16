@@ -1,0 +1,140 @@
+@mixin borderColorChange($color) {
+  box-shadow: 0 0 0 0.5px $color;
+  border-color: $color;
+}
+
+.container {
+  display: flex;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--font-color-default);
+}
+
+.iconLeft {
+  margin-left: 12px;
+  left: 0;
+}
+
+.iconRight {
+  right: 0;
+  margin-right: 12px;
+}
+
+.primary {
+  border: 1px solid var(--font-color-default);
+  border-radius: 6px;
+  padding: 9px 10px;
+  color: var(--secondary-5);
+  font-size: 16px;
+  line-height: 24px;
+
+  &:active,
+  &:focus {
+    @include borderColorChange(var(--primary-1));
+  }
+
+  &.inputFilled {
+    &:not(:disabled) {
+      border-color: var(--secondary-6);
+    }
+    &:focus {
+      border-color: var(--primary-1);
+    }
+  }
+
+  &.inputError {
+    &:not(:disabled) {
+      @include borderColorChange(var(--status-error));
+    }
+  }
+}
+
+.secondary {
+  border: 0;
+  border-bottom: 1px solid var(--font-color-default);
+  background-color: transparent;
+  padding: 4px 10px;
+  color: var(--font-color-default);
+  font-size: 14px;
+  line-height: 14px;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  outline: none;
+  transition:
+    box-shadow 125ms ease,
+    border-color 125ms ease;
+
+  &::placeholder {
+    color: var(--secondary-11);
+  }
+}
+
+.leftIconInputPadding {
+  padding-left: 38px;
+}
+
+.rightIconInputPadding {
+  padding-right: 38px;
+}
+
+.prefixInputBorder {
+  border-radius: 0 6px 6px 0;
+}
+
+.suffixInputBorder {
+  border-radius: 6px 0 0 6px;
+}
+
+.suffixInputBorder.prefixInputBorder {
+  border-radius: 0;
+}
+
+.formattedMask {
+  font-size: 16px;
+  color: var(--secondary-5);
+  background-color: var(--secondary-4);
+  cursor: text;
+  position: absolute;
+  height: 18px;
+  top: 13px;
+  right: 26px;
+  left: 11px;
+  z-index: 1;
+  text-wrap: none;
+  overflow: hidden;
+
+  &.disabled {
+    cursor: default;
+  }
+}
+
+.input:disabled,
+.formattedMask.disabled {
+  background-color: var(--secondary-2);
+  color: var(--secondary-15);
+  opacity: 1;
+}

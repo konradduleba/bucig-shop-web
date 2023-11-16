@@ -1,3 +1,13 @@
 .navigation {
-  background-color: var(--status-error);
+  width: calc(100vw - var(--desktop-menu-width));
+  position: fixed;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--border-rgb);
+  margin-left: var(--desktop-menu-width);
+  height: var(--desktop-navigation-height);
+  display: grid;
+  grid-template-columns: 70px 1fr 1fr var(--desktop-navigation-height);
+  align-items: center;
 }

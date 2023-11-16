@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import SvgClock from '@icons/clock';
-import { useI18nContext } from '@i18n/i18n-react';
+import { useI18nContext } from '@i18n';
 
 import { TwoLinesContent } from '../content/two-lines';
 import { ICON_FONT_SIZE } from '../contact.consts';

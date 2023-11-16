@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ComponentProps, FC, PropsWithChildren } from 'react';
-import { useI18nContext } from '@i18n/i18n-react';
+import { useI18nContext } from '@i18n';
 
 export interface CustomLinkProps {
   external?: boolean;

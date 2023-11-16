@@ -14,6 +14,9 @@ const pl: Translation = {
   COMMON: {
     WRITE_A_MESSAGE: 'Napisz do nas',
   },
+  VALIDATION: {
+    PASSWORD_MUST_CONTAIN: 'Hasło musi zawierać',
+  },
 };
 
 export default pl;

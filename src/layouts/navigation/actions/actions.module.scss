@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 300px 40px 40px;
+  gap: 8px;
+}
+
+.icon {
+  color: var(--primary-2);
+}

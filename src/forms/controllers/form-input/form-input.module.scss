@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: var(--font-color-default);
+}
+
+.helperText {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.25px;
+  color: var(--font-color-default);
+}
+
+.error {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+}

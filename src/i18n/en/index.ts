@@ -14,6 +14,9 @@ const en: Translation = {
   COMMON: {
     WRITE_A_MESSAGE: 'Write a message',
   },
+  VALIDATION: {
+    PASSWORD_MUST_CONTAIN: 'Password must contain',
+  },
 };
 
 export default en;

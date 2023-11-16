@@ -1,0 +1,28 @@
+.inputAdditionalPart {
+  display: flex;
+  padding: 8px 16px;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--secondary-2);
+  border: 1px solid var(--secondary-9);
+  color: var(--secondary-15);
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.prefix {
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+.suffix {
+  border-left: 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.disabled {
+  border-color: var(--secondary-9);
+}
