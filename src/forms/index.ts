@@ -6,5 +6,4 @@ export type {
 } from './base-form/useBaseForm';
 
 export * from './controllers/form-input/form-input';
-export * from './controllers/form-password-input/form-password-input';
 export * from './controllers/form-toggle/form-toggle';
