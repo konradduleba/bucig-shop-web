@@ -25,6 +25,4 @@ const useI18nContext = (): I18nContextType<
   TranslationFunctions
 > => useContext(I18nContext);
 
-export { I18nContext, useI18nContext };
-
-export default TypesafeI18n;
+export { I18nContext, useI18nContext, TypesafeI18n };

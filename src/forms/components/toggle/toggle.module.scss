@@ -1,0 +1,60 @@
+.wrapper {
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.toggleContainer {
+  --toggle-justify-content: flex-start;
+  --toggle-background: var(--secondary-10);
+
+  display: flex;
+  justify-content: var(--toggle-justify-content);
+  flex: 0 0 36px;
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+  background-color: var(--toggle-background);
+  border-radius: 100px;
+  margin-inline-end: 8px;
+  transition: background-color var(--shrot-animation-duration)
+    var(--animation-easing);
+
+  &.isOn {
+    --toggle-justify-content: flex-end;
+    --toggle-background: var(--primary-1);
+  }
+}
+
+.toggle {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--secondary-1);
+  border-radius: 100px;
+  box-shadow: var(--shadow-2dp); // TODO: add proper shadow
+}
+
+.disabled {
+  opacity: 40%;
+  cursor: default;
+}

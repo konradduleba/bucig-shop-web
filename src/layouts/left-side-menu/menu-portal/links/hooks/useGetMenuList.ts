@@ -1,4 +1,4 @@
-import { useI18nContext } from '@i18n/i18n-react';
+import { useI18nContext } from '@i18n';
 import { ROUTES } from '@utils';
 
 import {

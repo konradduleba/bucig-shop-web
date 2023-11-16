@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import SvgArrowRight from '@icons/arrow-right';
-import { useI18nContext } from '@i18n/i18n-react';
+import { useI18nContext } from '@i18n';
 
 import { TextLine } from '../../content/text-line';
 import { ARROW_FONT_SIZE } from '../../content/content.consts';

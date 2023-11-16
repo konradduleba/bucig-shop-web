@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.search {
+  width: 100%;
+  overflow: hidden;
+}

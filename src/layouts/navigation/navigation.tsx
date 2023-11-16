@@ -1,28 +1,19 @@
 import { FC } from 'react';
 
-import { useGetMenuRoutes } from '../hooks';
-
-import { MenuRoute } from '@types';
-import Typography from '@components/typography';
-import CustomLink from '@components/custom-link/custom-link';
+import { Logo } from './logo/logo';
+import { SubPages } from './sub-pages/sub-pages';
+import { Actions } from './actions/actions';
+import { Basket } from './basket/basket';
 
 import styles from './navigation.module.scss';
 
 export const Navigation: FC = () => {
-  const menuRoutes = useGetMenuRoutes();
-
   return (
     <nav className={styles.navigation}>
-      <Typography.Text size="20">Navigation</Typography.Text>
-      <ul>
-        {menuRoutes.map(({ href, name }: MenuRoute) => (
-          <li key={name}>
-            <CustomLink href={href}>
-              <Typography.Text size="12">{name}</Typography.Text>
-            </CustomLink>
-          </li>
-        ))}
-      </ul>
+      <Logo />
+      <SubPages />
+      <Actions />
+      <Basket />
     </nav>
   );
 };

@@ -5,4 +5,5 @@ export const ROUTES = {
   MESSAGE_US: () => '/message-us',
   CONFIGURATOR: () => '/configurator',
   JOIN_US: () => '/join-us',
+  LOGIN: () => '/auth/login',
 };

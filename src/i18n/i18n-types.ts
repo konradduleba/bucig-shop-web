@@ -29,6 +29,9 @@ type RootTranslation = {
   COMMON: {
     WRITE_A_MESSAGE: string;
   };
+  VALIDATION: {
+    PASSWORD_MUST_CONTAIN: string;
+  };
 };
 
 export type TranslationFunctions = {
@@ -44,6 +47,9 @@ export type TranslationFunctions = {
   };
   COMMON: {
     WRITE_A_MESSAGE: () => LocalizedString;
+  };
+  VALIDATION: {
+    PASSWORD_MUST_CONTAIN: () => LocalizedString;
   };
 };
 

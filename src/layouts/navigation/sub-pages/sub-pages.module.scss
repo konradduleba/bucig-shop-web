@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 20px;
+  text-align: center;
+}
+
+.text {
+  color: var(--font-color-default);
+
+  &:hover {
+    color: var(--font-color-inactive);
+  }
+}

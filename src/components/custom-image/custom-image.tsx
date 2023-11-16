@@ -1,13 +1,13 @@
 import Image, { ImageProps } from 'next/image';
 import { FC } from 'react';
 
-import styles from './preview-image.module.scss';
+import styles from './custom-image.module.scss';
 
-type PreviewImageProps = Pick<ImageProps, 'alt' | 'src'>;
+type CustomImageProps = Pick<ImageProps, 'alt' | 'src'>;
 
 const sizes: ImageProps['sizes'] = '100%';
 
-export const PreviewImage: FC<PreviewImageProps> = ({ alt, src }) => {
+const CustomImage: FC<CustomImageProps> = ({ alt, src }) => {
   return (
     <Image
       src={src}
@@ -19,3 +19,5 @@ export const PreviewImage: FC<PreviewImageProps> = ({ alt, src }) => {
     />
   );
 };
+
+export default CustomImage;
