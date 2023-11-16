@@ -72,7 +72,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         />
         {showPasswordChecklist && displayPasswordChecklist && (
           <PasswordChecklist
-            passwordErrors={passwordErrors as PasswordErrorType}
+            passwordErrors={passwordErrors as PasswordErrorType[]}
             className={styles.passwordChecklist}
           />
         )}
