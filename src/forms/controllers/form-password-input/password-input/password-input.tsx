@@ -4,6 +4,7 @@ import SvgEyeClosed from '@icons/eye-closed';
 import SvgEye from '@icons/eye';
 
 import { TextInputProps, TextInput } from '../../../components';
+import { PasswordErrorType } from './types/Password.type';
 
 import PasswordChecklist from './password-checklist/password-checklist';
 
@@ -71,7 +72,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
         />
         {showPasswordChecklist && displayPasswordChecklist && (
           <PasswordChecklist
-            passwordErrors={passwordErrors}
+            passwordErrors={passwordErrors as PasswordErrorType}
             className={styles.passwordChecklist}
           />
         )}
