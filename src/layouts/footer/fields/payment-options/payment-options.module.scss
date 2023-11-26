@@ -1,5 +1,15 @@
+@use '../../../../styles/breakpoints' as *;
+
 .container {
   margin: 0 auto;
   display: flex;
   gap: 16px;
+
+  @include phone-only() {
+    padding: var(--footer-list-gap-mobile) 0;
+  }
+
+  @include tablet-sm-only() {
+    padding: var(--footer-list-gap) 0;
+  }
 }

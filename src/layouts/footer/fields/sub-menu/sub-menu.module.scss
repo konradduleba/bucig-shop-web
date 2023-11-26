@@ -1,15 +1,48 @@
+@use '../../../../styles/breakpoints' as *;
+
 .container {
-  border-right: 1px solid var(--border-rgb);
+  --border-right: 1px solid var(--border-rgb);
+
+  border-right: var(--border-right);
+
+  @include phone-only() {
+    --border-right: unset;
+  }
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--footer-list-gap);
+
+  @include phone-only() {
+    --footer-list-gap: 0;
+  }
+
+  @include tablet-sm-only() {
+    --footer-list-gap: 0;
+  }
+}
+
+.element {
+  --width: fit-content;
+
+  width: var(--width);
+
+  @include phone-only() {
+    --width: 100%;
+  }
+
+  @include tablet-sm-only() {
+    --width: 100%;
+  }
 }
 
 .link {
-  width: fit-content;
+  @include phone-only() {
+    display: block;
+    padding: var(--footer-list-gap-mobile) 0;
+  }
 }
 
 .text {
