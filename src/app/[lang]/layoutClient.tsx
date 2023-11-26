@@ -9,8 +9,7 @@ import {
   i18nAsync,
 } from '@i18n';
 import { ThemeProvider } from '@providers';
-import { Navigation, MainContent, LeftSideMenu } from '@layouts';
-// import { Footer } from '../../layouts/footer/footer';
+import { Navigation, MainContent, LeftSideMenu, Footer } from '@layouts';
 
 interface Props {
   children: ReactNode;
@@ -33,7 +32,7 @@ export default function ClientComponent({
           <LeftSideMenu />
           <Navigation />
           <MainContent>{children}</MainContent>
-          {/*<Footer /> */}
+          <Footer />
         </ThemeProvider>
         <div id="menu-portal" />
       </body>

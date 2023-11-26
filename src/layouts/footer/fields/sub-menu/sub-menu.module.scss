@@ -1,0 +1,21 @@
+.container {
+  border-right: 1px solid var(--border-rgb);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--footer-list-gap);
+}
+
+.link {
+  width: fit-content;
+}
+
+.text {
+  color: var(--font-color-default);
+
+  &:hover {
+    color: var(--font-color-inactive);
+  }
+}

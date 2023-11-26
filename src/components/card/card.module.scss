@@ -1,6 +1,5 @@
 .card {
   position: relative;
-  background: var(--transparent-2);
-  backdrop-filter: blur(20px);
+  background-color: var(--transparent-2);
   border: 1px solid var(--border-rgb);
 }

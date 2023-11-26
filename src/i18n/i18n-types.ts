@@ -21,6 +21,7 @@ type RootTranslation = {
     CONFIGURATOR: string;
     LINK: string;
     FALLBACK: string;
+    PRIVACY_POLICY: string;
   };
   HOURS: {
     MON_FRI: string;
@@ -28,9 +29,15 @@ type RootTranslation = {
   };
   COMMON: {
     WRITE_A_MESSAGE: string;
+    EMAIL: string;
+    ADDRESS: string;
+    OPEN_HOURS: string;
   };
   VALIDATION: {
     PASSWORD_MUST_CONTAIN: string;
+  };
+  CREDITS: {
+    AUTHOR: string;
   };
 };
 
@@ -40,6 +47,7 @@ export type TranslationFunctions = {
     CONFIGURATOR: () => LocalizedString;
     LINK: (arg: LinkProps['href']) => LocalizedString;
     FALLBACK: () => LocalizedString;
+    PRIVACY_POLICY: () => LocalizedString;
   };
   HOURS: {
     MON_FRI: () => LocalizedString;
@@ -47,9 +55,15 @@ export type TranslationFunctions = {
   };
   COMMON: {
     WRITE_A_MESSAGE: () => LocalizedString;
+    EMAIL: () => LocalizedString;
+    ADDRESS: () => LocalizedString;
+    OPEN_HOURS: () => LocalizedString;
   };
   VALIDATION: {
     PASSWORD_MUST_CONTAIN: () => LocalizedString;
+  };
+  CREDITS: {
+    AUTHOR: () => LocalizedString;
   };
 };
 

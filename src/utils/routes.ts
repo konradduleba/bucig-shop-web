@@ -6,4 +6,5 @@ export const ROUTES = {
   CONFIGURATOR: () => '/configurator',
   JOIN_US: () => '/join-us',
   LOGIN: () => '/auth/login',
+  PRIVACY_POLICY: () => '/private-policy',
 };

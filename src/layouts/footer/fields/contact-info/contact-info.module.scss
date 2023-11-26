@@ -1,0 +1,23 @@
+.container {
+  padding-left: 40px !important;
+  gap: var(--footer-list-gap);
+}
+
+.contact {
+  display: flex;
+  gap: 8px;
+}
+
+.label {
+  color: var(--font-color-inactive);
+}
+
+.value {
+  color: var(--font-color-default);
+}
+
+.link {
+  &:hover {
+    color: var(--font-color-inactive);
+  }
+}
