@@ -1,9 +1,27 @@
+@use '../../../../styles/breakpoints' as *;
+
 .container {
-  width: fit-content;
+  --grid-template-columns: repeat(2, 1fr);
+  --width: fit-content;
+
+  width: var(--width);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: var(--grid-template-columns);
   align-content: center;
-  gap: 24px;
+  gap: var(--footer-list-gap);
+
+  @include phone-only() {
+    --grid-template-columns: 1fr;
+    --width: 100%;
+    justify-items: center;
+    padding: var(--footer-list-gap-mobile) 0;
+  }
+
+  @include tablet-sm-only() {
+    --grid-template-columns: 1fr;
+    --width: 100%;
+    justify-items: center;
+  }
 }
 
 .link {

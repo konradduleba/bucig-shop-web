@@ -3,6 +3,7 @@
     @content;
   }
 }
+
 @mixin tablet-only {
   @media (min-width: 768px) and (max-width: 1349px) {
     @content;

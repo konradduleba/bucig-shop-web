@@ -1,7 +1,21 @@
+@use '../../../../styles/breakpoints' as *;
+
 .container {
+  --justify-content: flex-end;
+
   display: flex;
-  justify-content: flex-end;
+  justify-content: var(--justify-content);
   align-items: center;
   text-align: right;
   gap: 8px;
+
+  @include phone-only() {
+    --justify-content: center;
+
+    padding: var(--footer-list-gap-mobile) 0;
+  }
+
+  @include tablet-sm-only() {
+    --justify-content: center;
+  }
 }

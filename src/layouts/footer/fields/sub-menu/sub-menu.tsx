@@ -18,8 +18,8 @@ export const SubMenu: FC = () => {
     <Section className={styles.container}>
       <ul className={styles.list}>
         {menuRoutes.map(({ href, name }: MenuRoute) => (
-          <li key={name} className={styles.link}>
-            <CustomLink href={href}>
+          <li key={name} className={styles.element}>
+            <CustomLink href={href} className={styles.link}>
               <Typography.Text size="16" className={styles.text}>
                 {name}
               </Typography.Text>
