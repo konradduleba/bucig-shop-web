@@ -36,6 +36,11 @@ type RootTranslation = {
   VALIDATION: {
     PASSWORD_MUST_CONTAIN: string;
   };
+  ERROR: {
+    NOT_FOUND_TITLE: string;
+    NOT_FOUND_DESCRIPTION: string;
+    NOT_FOUND_BUTTON: string;
+  };
   CREDITS: {
     AUTHOR: string;
   };
@@ -64,6 +69,11 @@ export type TranslationFunctions = {
   };
   CREDITS: {
     AUTHOR: () => LocalizedString;
+  };
+  ERROR: {
+    NOT_FOUND_TITLE: () => LocalizedString;
+    NOT_FOUND_DESCRIPTION: () => LocalizedString;
+    NOT_FOUND_BUTTON: () => LocalizedString;
   };
 };
 

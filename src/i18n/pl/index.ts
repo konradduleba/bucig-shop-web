@@ -24,6 +24,12 @@ const pl: Translation = {
   CREDITS: {
     AUTHOR: 'Stworzone przez',
   },
+  ERROR: {
+    NOT_FOUND_TITLE: 'Strona nie istnieje.',
+    NOT_FOUND_DESCRIPTION:
+      'Niestety, nie znaleziono strony, której szukasz. Możesz wrócić na stronę główną.',
+    NOT_FOUND_BUTTON: 'Strona główna',
+  },
 };
 
 export default pl;

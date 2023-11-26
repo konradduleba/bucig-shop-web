@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import styles from './heading.module.scss';
 
-type HeadingSize = '24' | '30' | '36' | '42' | '48' | '54';
+type HeadingSize = '24' | '30' | '36' | '42' | '48' | '54' | '108';
 type HeadingOption = 'primary' | 'secondary';
 export interface HeadingProps {
   children: ReactNode;
@@ -19,6 +19,7 @@ const SIZE_CLASS: Record<HeadingSize, string> = {
   42: styles.size42,
   48: styles.size48,
   54: styles.size54,
+  108: styles.size108,
 };
 
 const OPTION_CLASS: Record<HeadingOption, string> = {
