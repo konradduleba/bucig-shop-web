@@ -1,3 +1,17 @@
 .footer {
-  background-color: var(--status-info);
+  --footer-list-gap: 25px;
+
+  background-color: var(--footer-background);
+  margin-left: var(--desktop-menu-width);
+  border-top: 1px solid var(--border-rgb);
+}
+
+.contactInfo {
+  grid-template-columns: 55% 45%;
+  border-bottom: 1px solid var(--border-rgb);
+  padding: 0 !important;
+}
+
+.authors {
+  grid-template-columns: repeat(3, 1fr);
 }

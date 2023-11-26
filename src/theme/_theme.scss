@@ -3,6 +3,7 @@
 
 :root {
   --short-animation-duration: #{$short-animation-duration};
+  --medium-animation-duration: #{$medium-animation-duration};
   --animation-easing: #{$animation-easing};
   --transition-short: #{$transition-short};
   --transition-medium: #{$transition-medium};
@@ -33,4 +34,7 @@
 
   // borders
   --border-rgb: #{$border-1-dark};
+
+  //backgrounds
+  --footer-background: #{$footer-background-dark};
 }

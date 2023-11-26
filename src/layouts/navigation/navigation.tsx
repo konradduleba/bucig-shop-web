@@ -1,17 +1,23 @@
 import { FC } from 'react';
+import cn from 'classnames';
 
-import { Logo } from './logo/logo';
-import { SubPages } from './sub-pages/sub-pages';
-import { Actions } from './actions/actions';
-import { Basket } from './basket/basket';
+import { useScrollPosition } from '@hooks';
+
+import { Logo, SubMenu, Actions, Basket } from './fields';
 
 import styles from './navigation.module.scss';
 
 export const Navigation: FC = () => {
+  const { scrollPosition } = useScrollPosition();
+
+  const isScrollMoved = scrollPosition !== 0;
+
   return (
-    <nav className={styles.navigation}>
+    <nav
+      className={cn(styles.navigation, { [styles.scrollMoved]: isScrollMoved })}
+    >
       <Logo />
-      <SubPages />
+      <SubMenu />
       <Actions />
       <Basket />
     </nav>

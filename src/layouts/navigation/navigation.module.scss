@@ -10,4 +10,12 @@
   display: grid;
   grid-template-columns: 70px 1fr 1fr var(--desktop-navigation-height);
   align-items: center;
+  transition:
+    background-color var(--medium-animation-duration) var(--animation-easing),
+    backdrop-filter var(--medium-animation-duration) var(--animation-easing);
+}
+
+.scrollMoved {
+  background-color: var(--transparent-glass);
+  backdrop-filter: blur(10px);
 }

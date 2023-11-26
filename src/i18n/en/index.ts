@@ -6,6 +6,7 @@ const en: Translation = {
     CONFIGURATOR: 'Configurator',
     LINK: '/en{0}',
     FALLBACK: 'Fallback',
+    PRIVACY_POLICY: 'Privacy policy',
   },
   HOURS: {
     MON_FRI: 'Mon-Fri',
@@ -13,9 +14,15 @@ const en: Translation = {
   },
   COMMON: {
     WRITE_A_MESSAGE: 'Write a message',
+    ADDRESS: 'Address',
+    EMAIL: 'e-mail',
+    OPEN_HOURS: 'schedule',
   },
   VALIDATION: {
     PASSWORD_MUST_CONTAIN: 'Password must contain',
+  },
+  CREDITS: {
+    AUTHOR: 'Website development',
   },
 };
 
