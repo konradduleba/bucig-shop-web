@@ -21,6 +21,12 @@ const en: Translation = {
   VALIDATION: {
     PASSWORD_MUST_CONTAIN: 'Password must contain',
   },
+  ERROR: {
+    NOT_FOUND_TITLE: 'Page does not exist.',
+    NOT_FOUND_DESCRIPTION:
+      'Unfortunately, the page that you tried to find does not exist. You can go the home page.',
+    NOT_FOUND_BUTTON: 'Home page',
+  },
   CREDITS: {
     AUTHOR: 'Website development',
   },

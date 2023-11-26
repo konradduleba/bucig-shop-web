@@ -1,0 +1,26 @@
+.container {
+  // TODO: remove
+  padding-top: var(--desktop-navigation-height);
+  padding-left: var(--desktop-menu-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.content {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 48px;
+}
+
+.rightSection {
+  display: grid;
+  row-gap: 16px;
+}
+
+.divider {
+  height: 108px;
+  border-right: 2px solid var(--font-color-gray);
+}
