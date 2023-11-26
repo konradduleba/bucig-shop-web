@@ -3,7 +3,7 @@ import {
   initAcceptLanguageHeaderDetector,
   initRequestCookiesDetector,
 } from 'typesafe-i18n/detectors';
-import { detectLocale, locales } from './src/i18n/i18n-util';
+import { detectLocale, locales } from './i18n/i18n-util';
 
 // Get the preferred locale. This is where we allow the serverside typesafe-i18n detectors to work.
 function getLocale(request: NextRequest) {
@@ -39,6 +39,6 @@ export const config = {
     // Skip all internal, statically exported, and locale paths
     // This regex says: do NOT run if the path contains _next, do not run if the path contains . (this is to not run on things in the public directory), do not run if the path contains en
     // This should be updated with all locales as we add them
-    '/((?!_next)(?=[^.]*$)(?!en)(?!pl).*)',
+    '/((?!_next)(?=[^.]*$)(?!en/)(?!pl/).*)',
   ],
 };
