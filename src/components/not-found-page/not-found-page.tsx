@@ -1,10 +1,9 @@
 'use client';
-import cn from 'classnames';
-import styles from './not-found-page.module.scss';
 import Typography from '@components/typography';
-import { useI18nContext } from '../../i18n/i18n-react';
+import { useI18nContext } from '@i18n';
 import { Button } from '@components/buttons';
-import IconButton from '@components/buttons/icon-button/icon-button';
+
+import styles from './not-found-page.module.scss';
 
 const NotFoundPage = () => {
   const { LL } = useI18nContext();
