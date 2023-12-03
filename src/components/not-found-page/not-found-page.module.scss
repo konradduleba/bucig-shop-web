@@ -1,18 +1,21 @@
+@use '../../styles/breakpoints' as *;
+
 .container {
-  // TODO: remove
-  padding-top: var(--desktop-navigation-height);
-  padding-left: var(--desktop-menu-width);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  margin: 48px auto;
 }
 
 .content {
-  max-width: 900px;
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-direction: column;
   gap: 48px;
+
+  @include for-tablet-lg-up {
+    flex-direction: row;
+  }
 }
 
 .rightSection {
@@ -20,7 +23,7 @@
   row-gap: 16px;
 }
 
-.divider {
-  height: 108px;
-  border-right: 2px solid var(--font-color-gray);
+.homeButton {
+  margin-top: 48px;
+  margin-left: auto;
 }

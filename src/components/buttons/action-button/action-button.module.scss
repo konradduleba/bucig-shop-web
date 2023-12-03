@@ -1,0 +1,32 @@
+.button {
+  color: var(--primary-2);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0;
+  display: grid;
+
+  &::after {
+    margin-top: 10px;
+    content: '';
+    width: 80%;
+    border-bottom: 1px solid var(--primary-2);
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: 16px;
+}
