@@ -1,7 +1,8 @@
 import { AnimatePresence, AnimationLifecycles, motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
 
-import { LinkIds } from '../../links.types';
+import { LinkIds } from '@types';
+
 import { variants } from './variants';
 
 import styles from './preview-animation.module.scss';
