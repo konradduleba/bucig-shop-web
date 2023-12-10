@@ -1,42 +1,35 @@
 @use '../../../styles/breakpoints' as *;
 
 .container {
-  --grid-template-columns: repeat(5, 1fr);
+  --grid-template-columns: 1fr;
+  --padding: 8px 0;
 
   display: grid;
   grid-template-columns: var(--grid-template-columns);
+  padding: var(--padding);
 
-  @include for-tablet-lg-up() {
+  @include tablet-lg-up() {
+    --grid-template-columns: repeat(5, 1fr);
+    --padding: 0;
+
     height: 100%;
     border-top: 1px solid var(--border-rgb);
-  }
-
-  @include phone-only() {
-    --grid-template-columns: 1f;
-    padding: 8px 0;
-  }
-
-  @include tablet-sm-only() {
-    --grid-template-columns: 1fr;
-    padding: 8px 0;
   }
 }
 
 .container > a {
-  border-right: 1px solid var(--border-rgb);
-  border-bottom: 1px solid var(--border-rgb);
+  --border-right: 0;
+  --border-bottom: 0;
 
-  &:last-child {
-    border-right: none;
-  }
+  border-right: var(--border-right);
+  border-bottom: var(--border-bottom);
 
-  @include phone-only() {
-    border-right: 0;
-    border-bottom: 0;
-  }
+  @include tablet-lg-up() {
+    --border-right: 1px solid var(--border-rgb);
+    --border-bottom: 1px solid var(--border-rgb);
 
-  @include tablet-sm-only() {
-    border-right: 0;
-    border-bottom: 0;
+    &:last-child {
+      border-right: none;
+    }
   }
 }

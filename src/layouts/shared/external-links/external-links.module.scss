@@ -1,18 +1,17 @@
 @use '../../../styles/breakpoints' as *;
 
 .container {
+  --grid-template-columns: 1fr 1fr;
+  --gap: 8px;
+
   display: grid;
   justify-content: center;
-  gap: 2px;
+  grid-template-columns: var(--grid-template-columns);
+  gap: var(--gap);
 
-  @include phone-only() {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  @include tablet-sm-only() {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+  @include tablet-lg-up() {
+    --grid-template-columns: auto;
+    --gap: 2px;
   }
 }
 

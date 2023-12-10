@@ -1,15 +1,12 @@
 @use '../../styles/breakpoints' as *;
 
 .container {
-  --margin-left: var(--desktop-menu-width);
+  --margin-left: 0;
+
   margin-left: var(--margin-left);
 
-  @include phone-only() {
-    --margin-left: 0;
-  }
-
-  @include tablet-sm-only() {
-    --margin-left: 0;
+  @include tablet-lg-up() {
+    --margin-left: var(--desktop-menu-width);
   }
 }
 

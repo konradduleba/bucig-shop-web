@@ -1,20 +1,16 @@
 @use '../../styles/breakpoints' as *;
 
 .container {
-  --padding: 40px 80px;
+  --padding: 12px;
 
   padding: var(--padding);
   display: grid;
 
-  @include phone-only() {
-    --padding: 12px;
-  }
-
-  @include tablet-sm-only() {
+  @include tablet-sm-up() {
     --padding: 25px;
   }
 
-  @include tablet-lg-only() {
-    --padding: 25px;
+  @include desktop-only() {
+    --padding: 40px 80px;
   }
 }

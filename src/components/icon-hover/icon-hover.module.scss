@@ -9,7 +9,7 @@
   border-radius: 50%;
   transition: var(--transition-medium);
 
-  @include for-tablet-lg-up() {
+  @include tablet-lg-up() {
     &:hover {
       background-color: var(--transparent-1);
       cursor: pointer;
