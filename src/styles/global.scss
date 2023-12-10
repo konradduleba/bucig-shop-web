@@ -15,9 +15,14 @@ a {
 :root {
   --icon-default-width: 40px;
   --icon-default-height: 40px;
+
   --desktop-menu-width: 70px;
   --desktop-navigation-height: 70px;
+
+  --mobile-navigation-height: 55px;
+
   --z-index-overlay: 20;
+
   color: var(--font-color-default);
 }
 

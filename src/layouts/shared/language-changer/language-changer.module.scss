@@ -1,0 +1,22 @@
+@use '../../../styles/breakpoints' as *;
+
+.container {
+  display: grid;
+  gap: 4px;
+
+  @include phone-only() {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include tablet-sm-only() {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.text {
+  color: var(--font-color-inactive);
+
+  &:hover {
+    color: var(--font-color-default);
+  }
+}

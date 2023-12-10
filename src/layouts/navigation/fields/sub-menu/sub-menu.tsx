@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { getNavigationSubMenu } from '../../hooks/getNavigationSubMenu';
+import { getNavigationSubMenu } from '../../desktop-navigation/hooks/getNavigationSubMenu';
 
 import { MenuRoute } from '@types';
 

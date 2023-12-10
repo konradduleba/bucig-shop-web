@@ -1,0 +1,7 @@
+.container {
+  position: fixed;
+  z-index: calc(var(--z-index-overlay) + 3);
+  top: var(--mobile-navigation-height);
+  left: 0px;
+  width: 100%;
+}

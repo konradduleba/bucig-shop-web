@@ -9,7 +9,14 @@ import {
   i18nAsync,
 } from '@i18n';
 import { ThemeProvider } from '@providers';
-import { Navigation, MainContent, LeftSideMenu, Footer } from '@layouts';
+import {
+  DesktopNavigation,
+  MobileNavigation,
+  MainContent,
+  LeftSideMenu,
+  Footer,
+} from '@layouts';
+import { useScreenType } from '@hooks';
 
 interface Props {
   children: ReactNode;
@@ -22,6 +29,9 @@ export default function ClientComponent({
   locale,
   translation,
 }: Props) {
+  const { isMobile, isTabletSm } = useScreenType();
+  const displayMobileNavigation = isMobile || isTabletSm;
+
   loadedLocales[locale] = translation;
   i18nAsync.loadFormatters(locale);
 
@@ -29,8 +39,14 @@ export default function ClientComponent({
     <TypesafeI18n locale={locale}>
       <body>
         <ThemeProvider>
-          <LeftSideMenu />
-          <Navigation />
+          {displayMobileNavigation ? (
+            <MobileNavigation />
+          ) : (
+            <>
+              <LeftSideMenu />
+              <DesktopNavigation />
+            </>
+          )}
           <MainContent>{children}</MainContent>
           <Footer />
         </ThemeProvider>

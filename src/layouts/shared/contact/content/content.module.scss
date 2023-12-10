@@ -1,0 +1,33 @@
+@use '../../../../styles/breakpoints' as *;
+
+.content {
+  display: grid;
+  gap: 14px;
+  grid-template-rows: 34px 1fr;
+  align-self: flex-start;
+  padding-top: var(--info-padding-top);
+  justify-items: center;
+
+  @include phone-only() {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  @include tablet-sm-only() {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-top: 0;
+  }
+}
+
+.twoLinesInfo {
+  display: grid;
+  gap: 14px;
+}
+
+.info {
+  color: var(--color-primary);
+}
