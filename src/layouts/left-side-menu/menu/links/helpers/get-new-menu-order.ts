@@ -1,4 +1,4 @@
-import { LinkIds, MenuLink } from '../links.types';
+import { LinkIds, MenuLink } from '@types';
 
 export const getNewMenuOrder = (menu: MenuLink[], activePhotoKey: LinkIds) => {
   const indexOfElement = menu.findIndex(({ id }) => id === activePhotoKey);
