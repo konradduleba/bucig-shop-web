@@ -1,0 +1,13 @@
+.container {
+  padding: 0 8px;
+  border-bottom: 1px solid var(--border-rgb);
+  background-color: var(--transparent-glass);
+  backdrop-filter: blur(10px);
+  height: var(--mobile-navigation-height);
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border-bottom: 0;
+}

@@ -1,0 +1,37 @@
+@use '../../../../styles/breakpoints' as *;
+
+.container {
+  --padding: 12px;
+
+  padding: var(--padding);
+  transition: background-color var(--short-animation-duration)
+    var(--animation-easing);
+
+  @include for-tablet-lg-up() {
+    --padding: 20px;
+    height: 100%;
+
+    &:hover {
+      background-color: var(--transparent-1);
+      cursor: pointer;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+
+  @include phone-only() {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  @include tablet-sm-only() {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

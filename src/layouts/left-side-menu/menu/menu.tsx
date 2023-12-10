@@ -1,39 +1,41 @@
 'use client';
 
-import { FC, useState } from 'react';
-import IconSwapper from '@components/icon-swapper/icon-swapper';
-import IconButton from '@components/buttons/icon-button/icon-button';
+import { FC } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
-import SvgClose from '@icons/close';
-import SvgMenuAlt from '@icons/menu-alt';
+import Portal from '@components/portal/portal';
 
-import { MenuPortal } from '../menu-portal/menu-portal';
+import { MenuPortalAnimation } from './portal-animation/portal-animation';
+import { MenuLinks } from './links/links';
 
-import styles from './menu.module.scss';
+import { MenuContactsDesktop } from '../../shared';
+
+import { useVisibleToggle } from '@hooks';
+
+import { MenuButton } from '../../shared';
 
 const MENU_ICON_SIZE = 50;
 
 export const Menu: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const onToggleMenu = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  const { isVisible, toggleVisibility } = useVisibleToggle();
 
   return (
     <>
-      <IconButton
-        renderIcon={() => (
-          <IconSwapper
-            displayFirst={isOpen}
-            icon1={<SvgClose fontSize={MENU_ICON_SIZE} />}
-            icon2={<SvgMenuAlt fontSize={MENU_ICON_SIZE} />}
-          />
-        )}
-        onClick={onToggleMenu}
-        className={styles.menu}
+      <MenuButton
+        iconSize={MENU_ICON_SIZE}
+        isVisible={isVisible}
+        toggleVisibility={toggleVisibility}
       />
-      <MenuPortal isOpen={isOpen} />
+      <Portal>
+        <AnimatePresence>
+          {isVisible && (
+            <MenuPortalAnimation>
+              <MenuLinks />
+              <MenuContactsDesktop />
+            </MenuPortalAnimation>
+          )}
+        </AnimatePresence>
+      </Portal>
     </>
   );
 };

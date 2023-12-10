@@ -7,4 +7,5 @@ export const ROUTES = {
   JOIN_US: () => '/join-us',
   LOGIN: () => '/auth/login',
   PRIVACY_POLICY: () => '/private-policy',
+  FAVOURITES: () => '/favourites',
 };

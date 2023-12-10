@@ -1,8 +1,23 @@
+@use '../.././../../styles/breakpoints' as *;
+
 .container {
-  width: 36px;
-  height: 36px;
+  --icon-width: 36px;
+  --icon-height: 36px;
+
+  width: var(--icon-width);
+  height: var(--icon-height);
   border-radius: 50%;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
+
+  @include phone-only() {
+    --icon-width: 25px;
+    --icon-height: 25px;
+  }
+
+  @include tablet-sm-only() {
+    --icon-width: 25px;
+    --icon-height: 25px;
+  }
 }

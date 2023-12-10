@@ -1,0 +1,17 @@
+.container {
+  position: fixed;
+  top: var(--mobile-navigation-height);
+  left: 0;
+  height: calc(100vh - var(--mobile-navigation-height));
+  background-color: var(--transparent-glass);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  z-index: calc(var(--z-index-overlay) + 2);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - var(--mobile-navigation-height));
+}

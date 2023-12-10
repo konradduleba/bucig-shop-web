@@ -1,0 +1,42 @@
+@use '../../../styles/breakpoints' as *;
+
+.container {
+  --grid-template-columns: repeat(5, 1fr);
+
+  display: grid;
+  grid-template-columns: var(--grid-template-columns);
+
+  @include for-tablet-lg-up() {
+    height: 100%;
+    border-top: 1px solid var(--border-rgb);
+  }
+
+  @include phone-only() {
+    --grid-template-columns: 1f;
+    padding: 8px 0;
+  }
+
+  @include tablet-sm-only() {
+    --grid-template-columns: 1fr;
+    padding: 8px 0;
+  }
+}
+
+.container > a {
+  border-right: 1px solid var(--border-rgb);
+  border-bottom: 1px solid var(--border-rgb);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @include phone-only() {
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  @include tablet-sm-only() {
+    border-right: 0;
+    border-bottom: 0;
+  }
+}

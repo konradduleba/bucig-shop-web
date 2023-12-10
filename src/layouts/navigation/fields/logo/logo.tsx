@@ -3,10 +3,22 @@ import Image from 'next/image';
 
 import styles from './logo.module.scss';
 
-export const Logo: FC = () => {
+const LOGO_ICON_SIZE = 36;
+
+interface LogoProps {
+  logoSize?: number;
+}
+
+export const Logo: FC<LogoProps> = ({ logoSize = LOGO_ICON_SIZE }) => {
   return (
     <div className={styles.container}>
-      <Image alt="logo" src="/logo.jpeg" width={36} height={36} priority />
+      <Image
+        alt="logo"
+        src="/logo.jpeg"
+        width={logoSize}
+        height={logoSize}
+        priority
+      />
     </div>
   );
 };
