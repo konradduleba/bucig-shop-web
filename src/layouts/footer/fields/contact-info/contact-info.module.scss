@@ -20,15 +20,15 @@
 }
 
 .label {
-  color: var(--font-color-inactive);
+  --font-color: var(--font-color-inactive) !important;
 }
 
 .value {
-  color: var(--font-color-default);
+  --font-color: var(--font-color-default) !important;
 }
 
 .link {
   &:hover {
-    color: var(--font-color-inactive);
+    --font-color: var(--font-color-inactive) !important;
   }
 }

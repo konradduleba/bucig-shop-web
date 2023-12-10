@@ -46,9 +46,9 @@
 }
 
 .text {
-  color: var(--font-color-default);
+  color: var(--font-color-default) !important;
 
   &:hover {
-    color: var(--font-color-inactive);
+    color: var(--font-color-inactive) !important;
   }
 }

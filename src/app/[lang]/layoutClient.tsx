@@ -14,7 +14,6 @@ import {
   MobileNavigation,
   MainContent,
   LeftSideMenu,
-  Footer,
 } from '@layouts';
 import { useScreenType } from '@hooks';
 
@@ -48,7 +47,6 @@ export default function ClientComponent({
             </>
           )}
           <MainContent>{children}</MainContent>
-          <Footer />
         </ThemeProvider>
         <div id="menu-portal" />
       </body>
