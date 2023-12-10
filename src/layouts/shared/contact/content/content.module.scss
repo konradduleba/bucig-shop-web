@@ -1,25 +1,22 @@
 @use '../../../../styles/breakpoints' as *;
 
 .content {
-  display: grid;
+  --padding-top: 0;
+
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-top: var(--padding-top);
   gap: 14px;
-  grid-template-rows: 34px 1fr;
-  align-self: flex-start;
-  padding-top: var(--info-padding-top);
-  justify-items: center;
 
-  @include phone-only() {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    padding-top: 0;
-  }
+  @include tablet-lg-up() {
+    --padding-top: var(--info-padding-top);
 
-  @include tablet-sm-only() {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    padding-top: 0;
+    display: grid;
+    grid-template-rows: 34px 1fr;
+    align-self: flex-start;
+    justify-items: center;
+    align-items: unset;
   }
 }
 

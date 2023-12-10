@@ -1,21 +1,27 @@
 @use '../../../../styles/breakpoints' as *;
 
 .container {
-  gap: var(--footer-list-gap);
+  --border-top: 1px solid var(--border-rgb);
+  --gap: 0;
 
-  @include phone-only() {
-    --footer-list-gap: 0;
+  gap: var(--gap);
+  border-top: var(--border-top);
 
-    border-top: 1px solid var(--border-rgb);
+  @include tablet-sm-up() {
+    --border-top: unset;
+    --gap: var(--footer-list-gap);
   }
 }
 
 .contact {
+  --padding: var(--footer-list-gap) 0;
+
   display: flex;
   gap: 8px;
+  padding: var(--padding);
 
-  @include phone-only() {
-    padding: var(--footer-list-gap-mobile) 0;
+  @include tablet-sm-up() {
+    --padding: 0;
   }
 }
 

@@ -1,40 +1,43 @@
 @use '../../styles/breakpoints' as *;
 
 .footer {
-  --footer-list-gap: 25px;
-  --footer-list-gap-mobile: calc(var(--footer-list-gap) / 2);
+  --footer-list-gap: 12.5px;
 
   display: grid;
   background-color: var(--footer-background);
   border-top: 1px solid var(--border-rgb);
+
+  @include tablet-sm-up() {
+    --footer-list-gap: 25px;
+  }
 }
 
 .contactInfo {
-  --grid-template-columns: 55% 45%;
+  --grid-template-columns: 100%;
 
   grid-template-columns: var(--grid-template-columns);
   border-bottom: 1px solid var(--border-rgb);
   padding: 0 !important;
 
-  @include phone-only() {
-    --grid-template-columns: 100%;
-  }
-
   @include tablet-sm-only() {
     --grid-template-columns: 45% 55%;
+  }
+
+  @include tablet-lg-up() {
+    --grid-template-columns: 55% 45%;
   }
 }
 
 .authors {
-  --grid-template-columns: repeat(3, 1fr);
+  --grid-template-columns: 1fr;
 
   grid-template-columns: var(--grid-template-columns);
 
-  @include phone-only() {
-    --grid-template-columns: 1f;
-  }
-
   @include tablet-sm-only() {
     --grid-template-columns: 1fr;
+  }
+
+  @include tablet-lg-up() {
+    --grid-template-columns: repeat(3, 1fr);
   }
 }

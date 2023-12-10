@@ -7,7 +7,7 @@
   transition: background-color var(--short-animation-duration)
     var(--animation-easing);
 
-  @include for-tablet-lg-up() {
+  @include tablet-lg-up() {
     --padding: 20px;
     height: 100%;
 
@@ -19,19 +19,17 @@
 }
 
 .content {
+  --justify-content: flex-start;
+  --text-align: left;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: var(--justify-content);
   height: 100%;
-  text-align: center;
+  text-align: var(--text-align);
 
-  @include phone-only() {
-    justify-content: flex-start;
-    text-align: left;
-  }
-
-  @include tablet-sm-only() {
-    justify-content: flex-start;
-    text-align: left;
+  @include tablet-lg-up() {
+    --justify-content: center;
+    --text-align: center;
   }
 }

@@ -1,15 +1,14 @@
 @use '../../../styles/breakpoints' as *;
 
 .container {
+  --grid-template-columns: 1fr 1fr;
+
   display: grid;
+  grid-template-columns: var(--grid-template-columns);
   gap: 4px;
 
-  @include phone-only() {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @include tablet-sm-only() {
-    grid-template-columns: 1fr 1fr;
+  @include tablet-lg-up() {
+    --grid-template-columns: 1fr;
   }
 }
 

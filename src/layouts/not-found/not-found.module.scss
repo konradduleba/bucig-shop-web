@@ -3,7 +3,7 @@
 .container {
   margin-top: var(--mobile-navigation-height);
 
-  @include for-tablet-lg-up {
+  @include tablet-lg-up {
     margin-top: var(--desktop-navigation-height);
   }
 }
@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 48px;
 
-  @include for-tablet-lg-up {
+  @include tablet-lg-up {
     flex-direction: row;
   }
 }
