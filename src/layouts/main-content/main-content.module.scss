@@ -1,17 +1,8 @@
 @use '../../styles/breakpoints' as *;
 
 .main {
-  --base-padding: 24px;
-  --vertical-padding: var(--base-padding);
-  --horizontal-padding: var(--base-padding);
-
-  padding: var(--vertical-padding) var(--horizontal-padding);
-  padding-bottom: var(--base-padding);
-
-  @include for-tablet-lg-up {
-    --vertical-padding: calc(
-      var(--desktop-navigation-height) + var(--base-padding)
-    );
-    --horizontal-padding: calc(var(--desktop-menu-width) + var(--base-padding));
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }

@@ -1,11 +1,11 @@
 @use '../../styles/breakpoints' as *;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 48px auto;
+  margin-top: var(--mobile-navigation-height);
+
+  @include for-tablet-lg-up {
+    margin-top: var(--desktop-navigation-height);
+  }
 }
 
 .content {
