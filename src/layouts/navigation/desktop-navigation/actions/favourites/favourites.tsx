@@ -23,6 +23,7 @@ export const Favourites: FC = () => {
         <IconButton
           renderIcon={() => <SvgHeart />}
           className={commonStyles.icon}
+          aria-label="favourites"
         />
       </IconHover>
       <AnimatePresence>

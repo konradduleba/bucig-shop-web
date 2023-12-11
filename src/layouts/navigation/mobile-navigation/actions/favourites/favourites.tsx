@@ -14,7 +14,11 @@ export const Favourites: FC = () => {
   return (
     <CustomLink href={ROUTES.FAVOURITES()}>
       <IconHover>
-        <IconButton renderIcon={() => <SvgHeart />} className={styles.icon} />
+        <IconButton
+          renderIcon={() => <SvgHeart />}
+          className={styles.icon}
+          aria-label="favourites"
+        />
       </IconHover>
     </CustomLink>
   );

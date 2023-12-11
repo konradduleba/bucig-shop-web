@@ -44,6 +44,9 @@ type RootTranslation = {
   CREDITS: {
     AUTHOR: string;
   };
+  SEO: {
+    LOGIN_ARIA_LABEL: string;
+  };
 };
 
 export type TranslationFunctions = {
@@ -74,6 +77,9 @@ export type TranslationFunctions = {
     NOT_FOUND_TITLE: () => LocalizedString;
     NOT_FOUND_DESCRIPTION: () => LocalizedString;
     NOT_FOUND_BUTTON: () => LocalizedString;
+  };
+  SEO: {
+    LOGIN_ARIA_LABEL: () => LocalizedString;
   };
 };
 
