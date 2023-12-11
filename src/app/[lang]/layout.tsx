@@ -1,8 +1,9 @@
 import { FC, ReactNode } from 'react';
-import Head from 'next/head';
 import { Montserrat } from 'next/font/google';
 
-import { Locales, i18nAsync, baseLocale, loadedLocales } from '@i18n';
+import { Locales } from '../../i18n/i18n-types';
+import { loadLocaleAsync } from '../../i18n/i18n-util.async';
+import { baseLocale, loadedLocales } from '../../i18n/i18n-util';
 
 import ClientComponent from './layoutClient';
 
@@ -20,7 +21,7 @@ type Props = {
 };
 
 async function i18nDictionary(locale: Locales) {
-  await i18nAsync.loadLocaleAsync(locale);
+  await loadLocaleAsync(locale);
   return {
     locale,
     dictionary: loadedLocales[locale],
@@ -33,12 +34,6 @@ const RootLayout: FC<Props> = async ({ children, params }) => {
 
   return (
     <html lang={i18n.locale} className={inter.className}>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-      </Head>
       <ClientComponent locale={i18n.locale} translation={i18n.dictionary}>
         {children}
       </ClientComponent>
