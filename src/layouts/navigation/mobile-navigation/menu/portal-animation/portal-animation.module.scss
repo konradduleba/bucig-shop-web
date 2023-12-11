@@ -2,7 +2,7 @@
   position: fixed;
   top: var(--mobile-navigation-height);
   left: 0;
-  height: calc(100vh - var(--mobile-navigation-height));
+  height: calc(100% - var(--mobile-navigation-height));
   background-color: var(--transparent-glass);
   backdrop-filter: blur(10px);
   width: 100%;
@@ -13,5 +13,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - var(--mobile-navigation-height));
+  height: 100%;
 }
