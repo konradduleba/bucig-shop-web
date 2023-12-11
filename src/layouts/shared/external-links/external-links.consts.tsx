@@ -6,6 +6,7 @@ export interface ExternalLinkList {
   id: ExternalLinksTypes;
   icon: JSX.Element;
   onClick: MouseEventHandler<HTMLDivElement>;
+  label: string;
 }
 
 export enum ExternalLinksTypes {
@@ -18,10 +19,12 @@ export const EXTERNAL_LINK_LIST: ExternalLinkList[] = [
     id: ExternalLinksTypes.MOON,
     icon: <SvgMoon />,
     onClick: () => console.log(ExternalLinksTypes.MOON),
+    label: ExternalLinksTypes.MOON,
   },
   {
     id: ExternalLinksTypes.SUN,
     icon: <SvgSun />,
     onClick: () => console.log(ExternalLinksTypes.SUN),
+    label: ExternalLinksTypes.SUN,
   },
 ];

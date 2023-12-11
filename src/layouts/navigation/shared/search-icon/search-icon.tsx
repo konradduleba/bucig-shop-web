@@ -29,6 +29,7 @@ export const SearchIcon: FC<SearchIconProps> = ({
           />
         )}
         className={styles.icon}
+        aria-label="search"
       />
     </IconHover>
   );

@@ -30,6 +30,9 @@ const en: Translation = {
   CREDITS: {
     AUTHOR: 'Website development',
   },
+  SEO: {
+    LOGIN_ARIA_LABEL: 'Login into your account',
+  },
 };
 
 export default en;

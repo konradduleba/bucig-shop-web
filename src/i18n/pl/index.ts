@@ -30,6 +30,9 @@ const pl: Translation = {
       'Niestety, nie znaleziono strony, której szukasz. Możesz wrócić na stronę główną.',
     NOT_FOUND_BUTTON: 'Strona główna',
   },
+  SEO: {
+    LOGIN_ARIA_LABEL: 'Przejdź do strony logowania',
+  },
 };
 
 export default pl;

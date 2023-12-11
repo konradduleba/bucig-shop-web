@@ -30,6 +30,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
       )}
       onClick={toggleVisibility}
       className={styles.menu}
+      aria-label="menu"
     />
   );
 };
