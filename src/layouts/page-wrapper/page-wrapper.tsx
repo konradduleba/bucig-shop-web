@@ -1,7 +1,7 @@
-import { CSSProperties, FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import cn from 'classnames';
 
-import { useGetFooterHeight } from '@hooks';
+import { useGetFooterHeight, useHandleGlobalCSSVariable } from '@hooks';
 
 import styles from './page-wrapper.module.scss';
 
@@ -16,17 +16,13 @@ export const PageWrapper: FC<PropsWithChildren<PageWrapperProps>> = ({
   children,
 }) => {
   const { footerHeight } = useGetFooterHeight();
+  const { setGlobalCSSVariable } = useHandleGlobalCSSVariable();
 
-  const centerStyles: CSSProperties = {
-    minHeight: `calc(100vh - ${footerHeight}px)`,
-  };
-
-  const additionalStyles = center ? centerStyles : {};
+  center && setGlobalCSSVariable('--footer-height', `${footerHeight}px`);
 
   return (
     <div
       className={cn(styles.container, className, { [styles.center]: center })}
-      style={additionalStyles}
     >
       {children}
     </div>
