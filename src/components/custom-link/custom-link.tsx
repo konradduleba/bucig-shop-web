@@ -4,6 +4,7 @@ import { useI18nContext } from '@i18n';
 
 export interface CustomLinkProps {
   external?: boolean;
+  className?: string;
 }
 
 export type LinkProps = ComponentProps<typeof Link>;
@@ -11,6 +12,7 @@ export type LinkProps = ComponentProps<typeof Link>;
 const CustomLink: FC<PropsWithChildren<CustomLinkProps & LinkProps>> = ({
   children,
   external,
+  className,
   ...linkProps
 }) => {
   const { LL } = useI18nContext();
@@ -23,6 +25,7 @@ const CustomLink: FC<PropsWithChildren<CustomLinkProps & LinkProps>> = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        className={className}
       >
         {children}
       </Link>
@@ -30,7 +33,7 @@ const CustomLink: FC<PropsWithChildren<CustomLinkProps & LinkProps>> = ({
   }
 
   return (
-    <Link {...linkProps} href={LL.MENU.LINK(href)}>
+    <Link {...linkProps} href={LL.MENU.LINK(href)} className={className}>
       {children}
     </Link>
   );

@@ -1,21 +1,22 @@
 'use client';
 
 import { FC } from 'react';
+import cn from 'classnames';
 
-import styles from './language-changer.module.scss';
 import { Button } from '@components/buttons';
+import Typography from '@components/typography';
+
+import { useHandlePageLanguage } from '@hooks';
+
 import {
   AVAILABLE_LANGUAGES,
   AvailableLanguage,
-  Languages,
 } from './language-changer.consts';
-import Typography from '@components/typography';
+
+import styles from './language-changer.module.scss';
 
 export const LanguageChanger: FC = () => {
-  const onChangeLanguage = (key: Languages) => {
-    // @TODO Update when i18n will be implemented
-    console.log('lang', key);
-  };
+  const { selectedLocale, onChangeLanguage } = useHandlePageLanguage();
 
   return (
     <div className={styles.container}>
@@ -25,7 +26,12 @@ export const LanguageChanger: FC = () => {
           className={styles.button}
           onClick={() => onChangeLanguage(key)}
         >
-          <Typography.Text size="14" className={styles.text}>
+          <Typography.Text
+            size="14"
+            className={cn(styles.text, {
+              [styles.active]: selectedLocale === key,
+            })}
+          >
             {value}
           </Typography.Text>
         </Button>

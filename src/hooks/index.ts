@@ -6,3 +6,4 @@ export { useDisableBodyScroll } from './useDisableBodyScroll';
 export { useGetFooterHeight } from './useGetFooterHeight';
 export { useHandleGlobalCSSVariable } from './useHandleGlobalCSSVariable';
 export { useGetCurrentMenuListPathKey } from './useGetCurrentMenuListPathKey';
+export { useHandlePageLanguage } from './useHandlePageLanguage';

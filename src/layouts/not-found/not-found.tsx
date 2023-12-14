@@ -28,10 +28,12 @@ const NotFound = () => {
             </Typography.Text>
           </div>
         </div>
-        <CustomLink href={ROUTES.HOME()} as={ROUTES.HOME()}>
-          <ActionButton className={styles.homeButton}>
-            {LL.ERROR.NOT_FOUND_BUTTON()}
-          </ActionButton>
+        <CustomLink
+          href={ROUTES.HOME()}
+          as={ROUTES.HOME()}
+          className={styles.homeButton}
+        >
+          <ActionButton>{LL.ERROR.NOT_FOUND_BUTTON()}</ActionButton>
         </CustomLink>
       </Section>
     </PageWrapper>

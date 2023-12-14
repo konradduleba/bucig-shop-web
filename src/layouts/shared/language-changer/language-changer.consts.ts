@@ -1,20 +1,17 @@
-export enum Languages {
-  PL = 'pl',
-  ENG = 'eng',
-}
+import { Locales } from '@i18n';
 
 export interface AvailableLanguage {
-  key: Languages;
+  key: Locales;
   value: string;
 }
 
 export const AVAILABLE_LANGUAGES: AvailableLanguage[] = [
   {
-    key: Languages.PL,
+    key: 'pl',
     value: 'Pl',
   },
   {
-    key: Languages.ENG,
+    key: 'en',
     value: 'Eng',
   },
 ];
