@@ -8,6 +8,8 @@ import ActionButton from '@components/buttons/action-button/action-button';
 import { useI18nContext } from '@i18n';
 
 import styles from './not-found.module.scss';
+import CustomLink from '../../components/custom-link/custom-link';
+import { ROUTES } from '../../utils';
 
 const NotFound = () => {
   const { LL } = useI18nContext();
@@ -26,9 +28,11 @@ const NotFound = () => {
             </Typography.Text>
           </div>
         </div>
-        <ActionButton className={styles.homeButton}>
-          {LL.ERROR.NOT_FOUND_BUTTON()}
-        </ActionButton>
+        <CustomLink href={ROUTES.HOME()}>
+          <ActionButton className={styles.homeButton}>
+            {LL.ERROR.NOT_FOUND_BUTTON()}
+          </ActionButton>
+        </CustomLink>
       </Section>
     </PageWrapper>
   );
