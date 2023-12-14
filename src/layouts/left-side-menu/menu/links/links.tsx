@@ -19,7 +19,7 @@ export const MenuLinks: FC<Pick<LinkProps, 'onClick'>> = ({ onClick }) => {
         activePhotoKey={activePath.id}
         onClick={onClick}
       />
-      <PhotoPreview activePhoto={activePath} />
+      <PhotoPreview activePath={activePath} />
     </div>
   );
 };
