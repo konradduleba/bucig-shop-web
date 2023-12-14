@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import { FC } from 'react';
 
-import { VIEWPORT_METADATA } from '@constants';
-
-export const metadata: Metadata = VIEWPORT_METADATA;
+export const metadata: Metadata = {
+  title: 'Buciq - Loading',
+  description: 'Buciq - Loading the page',
+};
 
 const Loading: FC = () => {
   return <p>Loading</p>;
