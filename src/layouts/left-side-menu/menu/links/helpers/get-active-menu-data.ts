@@ -1,10 +1,8 @@
-import { LinkIds, MenuLink, MenuListElements } from '@types';
-
-import { ActivePhotoKey } from '../links.types';
+import { ActivePathKey, LinkIds, MenuLink, MenuListElements } from '@types';
 
 export const getActiveMenuData = (
   elements: MenuListElements,
-  key: ActivePhotoKey,
+  key: ActivePathKey,
 ): MenuLink => {
   const { MENU_LINK_CONFIGURATOR, MENU_LINK_FALLBACK, MENU_LINK_JOIN_US } =
     elements;

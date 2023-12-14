@@ -1,8 +1,6 @@
-import { LinkIds } from '@types';
+import { ActivePathKey, LinkIds } from '@types';
 
-import { ActivePhotoKey } from '../links.types';
-
-export const getActivePhotoKey = (pathname: string): ActivePhotoKey => {
+export const getActivePathKey = (pathname: string): ActivePathKey => {
   if (pathname.includes(LinkIds.CONFIGURATOR)) {
     return LinkIds.CONFIGURATOR;
   }

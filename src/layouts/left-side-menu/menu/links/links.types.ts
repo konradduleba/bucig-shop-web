@@ -1,10 +1,8 @@
 import { LinkIds, MenuLink } from '@types';
 
-export type ActivePhotoKey = LinkIds | null;
+export type ActivePath = Pick<MenuLink, 'imageRef' | 'label' | 'id'>;
 
-export type ActivePhoto = Pick<MenuLink, 'imageRef' | 'label' | 'id'>;
-
-export interface ActivePhotoHook {
-  activePhoto: ActivePhoto;
-  onUpdateActivePhoto: (key: LinkIds) => void;
+export interface ActivePathHook {
+  activePath: ActivePath;
+  onUpdateActivePath: (key: LinkIds) => void;
 }

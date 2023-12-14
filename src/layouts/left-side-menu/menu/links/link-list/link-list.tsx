@@ -2,19 +2,25 @@ import { FC } from 'react';
 
 import { useGetMenuList } from '@hooks';
 
+import { ActivePathKey } from '@types';
+
+import { LinkProps } from '@components/custom-link/custom-link';
+
 import { MenuLink } from './menu-link/menu-link';
 
-import { ActivePhotoHook, ActivePhotoKey } from '../links.types';
+import { ActivePathHook } from '../links.types';
 
 import styles from './link-list.module.scss';
 
-type LinkListProps = Pick<ActivePhotoHook, 'onUpdateActivePhoto'> & {
-  activePhotoKey: ActivePhotoKey;
-};
+type LinkListProps = Pick<ActivePathHook, 'onUpdateActivePath'> &
+  Pick<LinkProps, 'onClick'> & {
+    activePhotoKey: ActivePathKey;
+  };
 
 export const LinkList: FC<LinkListProps> = ({
   activePhotoKey,
-  onUpdateActivePhoto,
+  onClick,
+  onUpdateActivePath,
 }) => {
   const { menuList } = useGetMenuList();
 
@@ -26,7 +32,8 @@ export const LinkList: FC<LinkListProps> = ({
             key={id}
             href={href}
             isActive={activePhotoKey === id}
-            onMouseEnter={() => onUpdateActivePhoto(id)}
+            onMouseEnter={() => onUpdateActivePath(id)}
+            onClick={onClick}
           >
             {label}
           </MenuLink>

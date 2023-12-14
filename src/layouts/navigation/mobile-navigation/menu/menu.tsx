@@ -35,9 +35,9 @@ export const Menu: FC = () => {
           {isVisible && (
             <MenuPortalAnimation>
               <div className={styles.content}>
-                <Links />
+                <Links onClick={toggleVisibility} />
                 <Divider />
-                <MenuContactsMobile />
+                <MenuContactsMobile onClick={toggleVisibility} />
               </div>
               <LangAndLinks />
             </MenuPortalAnimation>

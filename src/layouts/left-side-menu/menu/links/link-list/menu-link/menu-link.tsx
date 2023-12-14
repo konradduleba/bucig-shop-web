@@ -6,7 +6,7 @@ import Typography from '@components/typography';
 
 import styles from './menu-link.module.scss';
 
-type MenuLinkProps = Pick<LinkProps, 'href'> & {
+type MenuLinkProps = Pick<LinkProps, 'href' | 'onClick'> & {
   onMouseEnter: () => void;
   isActive: boolean;
 };
@@ -14,12 +14,13 @@ type MenuLinkProps = Pick<LinkProps, 'href'> & {
 export const MenuLink: FC<PropsWithChildren<MenuLinkProps>> = ({
   isActive,
   onMouseEnter,
+  onClick,
   href,
   children,
 }) => {
   return (
     <li onMouseEnter={onMouseEnter} className={styles.link}>
-      <CustomLink href={href}>
+      <CustomLink href={href} onClick={onClick}>
         <Typography.Heading
           size="36"
           className={cn(styles.label, {

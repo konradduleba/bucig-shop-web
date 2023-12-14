@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import CustomLink from '@components/custom-link/custom-link';
+import CustomLink, { LinkProps } from '@components/custom-link/custom-link';
 
 import {
   CONTACT_INFO_MOBILE_ELEMENTS,
@@ -11,15 +11,17 @@ import { InfoSection } from './info-section/info-section';
 
 import styles from './contact.module.scss';
 
-interface LinkListProps {
-  list: ContactContent[];
-}
+type ClickLink = Pick<LinkProps, 'onClick'>;
 
-const LinkList: FC<LinkListProps> = ({ list }) => {
+type LinkListProps = ClickLink & {
+  list: ContactContent[];
+};
+
+const LinkList: FC<LinkListProps> = ({ list, onClick }) => {
   return (
     <div className={styles.container}>
       {list.map(({ href, id, children, external }: ContactContent) => (
-        <CustomLink href={href} key={id} external={external}>
+        <CustomLink href={href} key={id} external={external} onClick={onClick}>
           <InfoSection>{children}</InfoSection>
         </CustomLink>
       ))}
@@ -27,10 +29,10 @@ const LinkList: FC<LinkListProps> = ({ list }) => {
   );
 };
 
-export const MenuContactsMobile: FC = () => {
-  return <LinkList list={CONTACT_INFO_MOBILE_ELEMENTS} />;
+export const MenuContactsMobile: FC<ClickLink> = (props) => {
+  return <LinkList list={CONTACT_INFO_MOBILE_ELEMENTS} {...props} />;
 };
 
-export const MenuContactsDesktop: FC = () => {
-  return <LinkList list={CONTACT_INFO_DESKTOP_ELEMENTS} />;
+export const MenuContactsDesktop: FC<ClickLink> = (props) => {
+  return <LinkList list={CONTACT_INFO_DESKTOP_ELEMENTS} {...props} />;
 };

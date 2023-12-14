@@ -30,8 +30,8 @@ export const Menu: FC = () => {
         <AnimatePresence>
           {isVisible && (
             <MenuPortalAnimation>
-              <MenuLinks />
-              <MenuContactsDesktop />
+              <MenuLinks onClick={toggleVisibility} />
+              <MenuContactsDesktop onClick={toggleVisibility} />
             </MenuPortalAnimation>
           )}
         </AnimatePresence>

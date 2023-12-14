@@ -24,3 +24,5 @@ export interface GetMenuListHook {
   menuList: MenuLink[];
   menuListWithFallback: MenuLink[];
 }
+
+export type ActivePathKey = LinkIds | null;
