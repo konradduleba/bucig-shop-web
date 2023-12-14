@@ -6,17 +6,18 @@ import { useGetMenuList } from '@hooks';
 
 import { MenuLink } from '@types';
 
-import { ActivePhotoHook } from '../links.types';
+import { ActivePathHook } from '../links.types';
+
 import { getNewMenuOrder } from '../helpers/get-new-menu-order';
 
 import { PreviewAnimation } from './preview-animation/preview-animation';
 
 import styles from './photo-preview.module.scss';
 
-export const PhotoPreview: FC<Pick<ActivePhotoHook, 'activePhoto'>> = ({
-  activePhoto,
+export const PhotoPreview: FC<Pick<ActivePathHook, 'activePath'>> = ({
+  activePath,
 }) => {
-  const { id: activePhotoKey, imageRef, label } = activePhoto;
+  const { id: activePhotoKey, imageRef, label } = activePath;
   const { menuListWithFallback } = useGetMenuList();
 
   const [menu, setMenu] = useState<MenuLink[]>([]);
