@@ -12,10 +12,11 @@ import { ThemeProvider } from '@providers';
 import {
   DesktopNavigation,
   MobileNavigation,
-  MainContent,
   LeftSideMenu,
+  Footer,
 } from '@layouts';
 import { useScreenType } from '@hooks';
+import { PageTransition } from '../../layouts/page-transition/page-transition';
 
 interface Props {
   children: ReactNode;
@@ -46,7 +47,10 @@ export default function ClientComponent({
               <DesktopNavigation />
             </>
           )}
-          <MainContent>{children}</MainContent>
+          <PageTransition>
+            {children}
+            <Footer />
+          </PageTransition>
         </ThemeProvider>
         <div id="menu-portal" />
       </body>
