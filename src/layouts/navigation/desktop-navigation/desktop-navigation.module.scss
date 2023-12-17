@@ -1,7 +1,7 @@
 .navigation {
   width: calc(100vw - var(--desktop-menu-width));
   position: fixed;
-  z-index: 1;
+  z-index: calc(var(--z-index-overlay) + 2);
   background-color: transparent;
   color: var(--color-primary);
   border-bottom: 1px solid var(--border-rgb);

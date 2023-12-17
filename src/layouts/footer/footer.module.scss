@@ -4,6 +4,8 @@
   --footer-list-gap: 12.5px;
 
   display: grid;
+  position: relative;
+  z-index: 1;
   background-color: var(--footer-background);
   border-top: 1px solid var(--border-rgb);
 
