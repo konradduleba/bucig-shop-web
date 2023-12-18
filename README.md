@@ -31,6 +31,15 @@ Right now you have to manually clone the project and configure but in the neares
 - Extract template to the npm library and add ability to bootstrap project using terminal by answering questions like: </br>
 `Would you like to have dark/light theme? (Y/N)`
 
+## Tech stack
+- NextJS
+- TypeScript
+- ThreeJS
+- Framer Motion
+- Typesafe I18n
+- React Hook Form
+- STRAPI
+
 ## Authors
 <a href="https://github.com/konradduleba/bucig-shop-web/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=konradduleba/bucig-shop-web" />
