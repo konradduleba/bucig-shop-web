@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Main goal
+This project is mainly targeted to the programmers who wants to bootstrap their landing page in couple of seconds.
+Using this template will save your precious time on configuring necessary providers/themes/languages etc.
 
 ## Getting Started
 
-First, run the development server:
+18.12.2023: </br>
+Right now you have to manually clone the project and configure but in the nearest future this template will be available via terminal
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Schedule development
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Already done
+1. Setup project on NextJS using app routing.
+2. Create base components/providers like typography/ui elements.
+3. Add static sections like navigation/menu/footer.
+4. Add ability to change language and make it type safety.
+5. Add ability to toggle page theme.
+6. Add controlled and typesafe form based fields.
+7. Add RWD.
+8. Create robots and sitemaps files.
+9. Add animations ie. page transitions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Next steps
+- Connect STRAPI to the frontend
+- Create POC for product configuration and his preview in 3D using ThreeJS
+- Fill the page with an example products
+- Create user's dashboard page (loggin via apple/google)
+- Add ability to pay for the product via credit card
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Final step
+- Extract template to the npm library and add ability to bootstrap project using terminal by answering questions like: </br>
+`Would you like to have dark/light theme? (Y/N)`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Authors
+<a href="https://github.com/konradduleba/bucig-shop-web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=konradduleba/bucig-shop-web" />
+</a>
+   
