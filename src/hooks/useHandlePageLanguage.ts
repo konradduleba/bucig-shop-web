@@ -11,7 +11,7 @@ export const useHandlePageLanguage = () => {
       return;
     }
 
-    const updatedUrl = pathName.replace(`/${locale}/`, `/${languageKey}/`);
+    const updatedUrl = pathName.replace(`/${locale}`, `/${languageKey}`);
 
     router.push(updatedUrl);
   };

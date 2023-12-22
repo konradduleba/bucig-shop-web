@@ -1,0 +1,74 @@
+@use '../../styles/breakpoints' as *;
+
+.container {
+  position: fixed;
+  z-index: 99999999999999;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shades {
+  --shades-height: 80px;
+  --shades-width: 150px;
+
+  height: var(--shades-height);
+  width: var(--shades-width);
+
+  background: white;
+  mask-image: url('/shades.png');
+  mask-size: contain;
+
+  @include tablet-lg-up() {
+    --shades-height: 160px;
+    --shades-width: 300px;
+  }
+}
+
+.wave,
+.deepWater {
+  display: block;
+  width: 100%;
+}
+
+.water {
+  --water-margin-top: 20px;
+
+  margin-top: var(--water-margin-top);
+
+  @include tablet-lg-up() {
+    --water-margin-top: 45px;
+  }
+}
+
+.wave {
+  background: url('/wave.png');
+  height: 10px;
+  background-size: contain;
+  animation: wave 11s linear infinite;
+}
+
+.deepWater {
+  --deep-water-height: 40px;
+
+  background-color: rgb(4, 103, 246);
+  height: var(--deep-water-height);
+
+  @include tablet-lg-up() {
+    --deep-water-height: 80px;
+  }
+}
+
+@keyframes wave {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 1000px 0px;
+  }
+}

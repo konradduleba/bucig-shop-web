@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Bucig - Description about us',
 };
 
-const Page: FC = () => {
+const Page: FC = async () => {
   return <AboutUsPage />;
 };
 

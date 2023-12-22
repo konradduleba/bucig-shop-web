@@ -16,7 +16,7 @@
     "plugins": [
       {
         "name": "next"
-      }
+      },
     ],
     "paths": {
       "@utils": ["./src/utils/index.ts"],
@@ -24,14 +24,14 @@
       "@constants": ["./src/constants/index.ts"],
       "@layouts": ["./src/layouts/index.ts"],
       "@types": ["./src/types/index.ts"],
-      "@mocks/*": ["./src/mocks/*"],
       "@theme/*": ["./src/theme/*"],
       "@styles/*": ["./src/styles/*"],
       "@icons/*": ["./src/icons/*"],
       "@providers": ["./src/providers/index.ts"],
       "@i18n": ["./src/i18n/index.ts"],
       "@forms": ["./src/forms/index.ts"],
-      "@hooks": ["./src/hooks/index.ts"]
+      "@hooks": ["./src/hooks/index.ts"],
+      "@api": ["./src/api/index.ts"]
     }
   },
   "include": [

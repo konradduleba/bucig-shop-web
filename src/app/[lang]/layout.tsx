@@ -5,6 +5,8 @@ import { Locales } from '../../i18n/i18n-types';
 import { loadLocaleAsync } from '../../i18n/i18n-util.async';
 import { baseLocale, loadedLocales } from '../../i18n/i18n-util';
 
+import { useGetInitialQueries } from '@providers';
+
 import ClientComponent from './layoutClient';
 
 import '@styles/global.scss';
@@ -31,10 +33,15 @@ async function i18nDictionary(locale: Locales) {
 const RootLayout: FC<Props> = async ({ children, params }) => {
   const locale = params.lang as Locales;
   const i18n = await i18nDictionary(locale ?? baseLocale);
+  const { dehydratedState } = await useGetInitialQueries(i18n.locale);
 
   return (
     <html lang={i18n.locale} className={inter.className}>
-      <ClientComponent locale={i18n.locale} translation={i18n.dictionary}>
+      <ClientComponent
+        locale={i18n.locale}
+        translation={i18n.dictionary}
+        dehydratedState={dehydratedState}
+      >
         {children}
       </ClientComponent>
     </html>

@@ -1,0 +1,1 @@
+export { useGetInitialQueries } from './useGetInitialQueries';

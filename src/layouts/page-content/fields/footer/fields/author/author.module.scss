@@ -1,0 +1,22 @@
+@use '../../../../../../styles/breakpoints' as *;
+
+.container {
+  --justify-content: center;
+  --padding: var(--footer-list-gap) 0;
+
+  display: flex;
+  justify-content: var(--justify-content);
+  padding: var(--padding);
+  align-items: center;
+  text-align: right;
+  gap: 8px;
+
+  @include tablet-sm-only() {
+    --padding: 0;
+  }
+
+  @include tablet-lg-up() {
+    --padding: 0;
+    --justify-content: flex-end;
+  }
+}

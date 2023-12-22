@@ -13,10 +13,10 @@ const CustomLink: FC<PropsWithChildren<CustomLinkProps & LinkProps>> = ({
   children,
   external,
   className,
+  href,
   ...linkProps
 }) => {
   const { LL } = useI18nContext();
-  const { href } = linkProps;
 
   if (external) {
     return (

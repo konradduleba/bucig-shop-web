@@ -1,0 +1,1 @@
+export { useGetScreenTypes } from './useGetScreenTypes';
