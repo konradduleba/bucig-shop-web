@@ -1,0 +1,52 @@
+@use '../../../../../../styles/breakpoints' as *;
+
+.container {
+  --border-right: unset;
+
+  border-right: var(--border-right);
+
+  @include tablet-sm-up() {
+    --border-right: 1px solid var(--border-rgb);
+  }
+}
+
+.list {
+  --gap: 0;
+
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+
+  @include tablet-sm-up() {
+    --gap: var(--footer-list-gap);
+  }
+}
+
+.element {
+  --width: 100%;
+
+  width: var(--width);
+
+  @include tablet-lg-up() {
+    --width: fit-content;
+  }
+}
+
+.link {
+  display: block;
+  padding: var(--footer-list-gap) 0;
+
+  @include tablet-sm-up() {
+    display: unset;
+    padding: unset;
+  }
+}
+
+.text {
+  color: var(--font-color-default) !important;
+
+  &:hover {
+    color: var(--font-color-inactive) !important;
+  }
+}

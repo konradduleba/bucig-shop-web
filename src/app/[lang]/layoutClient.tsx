@@ -1,6 +1,8 @@
 'use client';
 
 import { ReactNode } from 'react';
+import { DehydratedState, HydrationBoundary } from '@tanstack/react-query';
+
 import {
   Locales,
   Translation,
@@ -8,51 +10,37 @@ import {
   TypesafeI18n,
   i18nAsync,
 } from '@i18n';
-import { ThemeProvider } from '@providers';
-import {
-  DesktopNavigation,
-  MobileNavigation,
-  LeftSideMenu,
-  Footer,
-  PageTransition,
-} from '@layouts';
-import { useScreenType } from '@hooks';
+
+import { QueryProvider, InitialStateProvider } from '@providers';
+
+import { PageContent } from '@layouts';
 
 interface Props {
   children: ReactNode;
   locale: Locales;
   translation: Translation;
+  dehydratedState: DehydratedState;
 }
 
 export default function ClientComponent({
   children,
   locale,
   translation,
+  dehydratedState,
 }: Props) {
-  const { isMobile, isTabletSm } = useScreenType();
-  const displayMobileNavigation = isMobile || isTabletSm;
-
   loadedLocales[locale] = translation;
   i18nAsync.loadFormatters(locale);
 
   return (
     <TypesafeI18n locale={locale}>
       <body>
-        <ThemeProvider>
-          {displayMobileNavigation ? (
-            <MobileNavigation />
-          ) : (
-            <>
-              <LeftSideMenu />
-              <DesktopNavigation />
-            </>
-          )}
-          <PageTransition>
-            {children}
-            <Footer />
-          </PageTransition>
-        </ThemeProvider>
-        <div id="menu-portal" />
+        <QueryProvider>
+          <HydrationBoundary state={dehydratedState}>
+            <InitialStateProvider>
+              <PageContent>{children}</PageContent>
+            </InitialStateProvider>
+          </HydrationBoundary>
+        </QueryProvider>
       </body>
     </TypesafeI18n>
   );

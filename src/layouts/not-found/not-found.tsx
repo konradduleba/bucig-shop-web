@@ -4,12 +4,13 @@ import { PageWrapper, Section } from '@layouts';
 
 import Typography from '@components/typography';
 import ActionButton from '@components/buttons/action-button/action-button';
+import CustomLink from '@components/custom-link/custom-link';
 
 import { useI18nContext } from '@i18n';
 
+import { ROUTES } from '@utils';
+
 import styles from './not-found.module.scss';
-import CustomLink from '../../components/custom-link/custom-link';
-import { ROUTES } from '../../utils';
 
 const NotFound = () => {
   const { LL } = useI18nContext();
@@ -28,11 +29,7 @@ const NotFound = () => {
             </Typography.Text>
           </div>
         </div>
-        <CustomLink
-          href={ROUTES.HOME()}
-          as={ROUTES.HOME()}
-          className={styles.homeButton}
-        >
+        <CustomLink href={ROUTES.HOME()} className={styles.homeButton}>
           <ActionButton>{LL.ERROR.NOT_FOUND_BUTTON()}</ActionButton>
         </CustomLink>
       </Section>

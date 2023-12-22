@@ -1,0 +1,18 @@
+@use '../.././../../../../styles/breakpoints' as *;
+
+.container {
+  --icon-width: 25px;
+  --icon-height: 25px;
+
+  width: var(--icon-width);
+  height: var(--icon-height);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+
+  @include tablet-lg-up() {
+    --icon-width: 36px;
+    --icon-height: 36px;
+  }
+}
