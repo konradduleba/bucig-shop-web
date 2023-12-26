@@ -1,11 +1,7 @@
-import { LinkProps } from '@components/custom-link/custom-link';
+import { Link } from '@types';
 
-type MenuLink = Pick<LinkProps, 'id' | 'href' | 'title'> & {
-  isExternal: boolean;
-};
-
-type Menu = MenuLink[];
+type NavLink = Pick<Link, 'id' | 'href' | 'title' | 'isExternal'>;
 
 export interface Navigation {
-  menu: Menu;
+  links: NavLink[];
 }

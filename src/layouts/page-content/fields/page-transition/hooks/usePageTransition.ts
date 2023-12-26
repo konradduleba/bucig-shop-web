@@ -17,7 +17,6 @@ export const usePageTransition = () => {
       lastPageRef.current = currentPageRef.current.children;
     }
 
-    console.log('pathname', pathname);
     exitAnimationDivRef.current?.appendChild(
       lastPageRef.current![0].cloneNode(true),
     );

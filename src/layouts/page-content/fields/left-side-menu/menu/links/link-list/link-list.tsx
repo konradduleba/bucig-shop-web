@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import { useGetMenuList } from '@hooks';
+import { useInitialStateProvider } from '@providers';
 
-import { ActivePathKey } from '@types';
-
+import { Link } from '@types';
 import { LinkProps } from '@components/custom-link/custom-link';
 
 import { MenuLink } from './menu-link/menu-link';
@@ -14,7 +13,7 @@ import styles from './link-list.module.scss';
 
 type LinkListProps = Pick<ActivePathHook, 'onUpdateActivePath'> &
   Pick<LinkProps, 'onClick'> & {
-    activePhotoKey: ActivePathKey;
+    activePhotoKey: Link['id'];
   };
 
 export const LinkList: FC<LinkListProps> = ({
@@ -22,22 +21,27 @@ export const LinkList: FC<LinkListProps> = ({
   onClick,
   onUpdateActivePath,
 }) => {
-  const { menuList } = useGetMenuList();
+  const {
+    menu: { links },
+  } = useInitialStateProvider();
 
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        {menuList.map(({ id, href, label }) => (
-          <MenuLink
-            key={id}
-            href={href}
-            isActive={activePhotoKey === id}
-            onMouseEnter={() => onUpdateActivePath(id)}
-            onClick={onClick}
-          >
-            {label}
-          </MenuLink>
-        ))}
+        {links.map(
+          ({ href, id, title, isVisible }) =>
+            isVisible && (
+              <MenuLink
+                key={id}
+                href={href}
+                isActive={activePhotoKey === id}
+                onMouseEnter={() => onUpdateActivePath(id)}
+                onClick={onClick}
+              >
+                {title}
+              </MenuLink>
+            ),
+        )}
       </ul>
     </div>
   );

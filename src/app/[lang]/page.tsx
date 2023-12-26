@@ -1,15 +1,37 @@
 import { Metadata } from 'next';
-import { FC } from 'react';
 
-import { HomePage } from './home';
+import { Locales } from '@i18n';
 
-export const metadata: Metadata = {
-  title: 'Bucig - Łokulary',
-  description: 'Bucig - Opis Łokularów',
+import { QueryKey, getHome, extractSeoMetadata } from '@api';
+
+import { Home } from './home';
+import { getQueryClient } from '../../providers/query-provider/helpers';
+
+const HOME_METADATA_FALLBACK: Metadata = {
+  title: 'Bucig - Fallback title',
+  description: 'Bucig - Fallback description',
 };
 
-const Page: FC = () => {
-  return <HomePage />;
+interface Props {
+  params: { lang: Locales };
+}
+
+export const generateMetadata = async ({
+  params: { lang },
+}: Props): Promise<Metadata> => {
+  const { fetchQuery } = getQueryClient();
+  const response = await fetchQuery([QueryKey.HOME], () => getHome(lang));
+
+  const seo = extractSeoMetadata(QueryKey.HOME, response);
+
+  return seo || HOME_METADATA_FALLBACK;
+};
+
+const Page = async ({ params: { lang } }: Props) => {
+  const { fetchQuery } = getQueryClient();
+  await fetchQuery([QueryKey.HOME], () => getHome(lang));
+
+  return <Home />;
 };
 
 export default Page;

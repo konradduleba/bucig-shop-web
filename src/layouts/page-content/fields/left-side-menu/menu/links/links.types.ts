@@ -1,8 +1,6 @@
-import { LinkIds, MenuLink } from '@types';
-
-export type ActivePath = Pick<MenuLink, 'imageRef' | 'label' | 'id'>;
+import { Link, MenuLink } from '@types';
 
 export interface ActivePathHook {
-  activePath: ActivePath;
-  onUpdateActivePath: (key: LinkIds) => void;
+  activePath: MenuLink;
+  onUpdateActivePath: (key: Link['id']) => void;
 }

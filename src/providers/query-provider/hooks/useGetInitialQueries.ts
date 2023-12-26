@@ -1,20 +1,32 @@
-import { QueryKey, getFooter, getGeneral, getNavigation } from '@api';
+import { QueryKey, getFooter, getGeneral, getNavigation, getMenu } from '@api';
 import { Locales } from '@i18n';
 
-import { Footer, General, Navigation } from '@types';
+import {
+  Footer,
+  GeneralAPIResponse,
+  MenuAPIResponse,
+  Navigation,
+} from '@types';
 
-import { CreateQueryMethod, useCreateQuery } from './useCreateQuery';
+import { usePrefetchQuery } from './usePrefetchQuery';
+import { CreateQueryMethod } from '../helpers';
 
 const getQueries = (createQuery: CreateQueryMethod, locale: Locales) => {
-  const generalQuery = createQuery<General>([QueryKey.GENERAL], getGeneral);
+  const generalQuery = createQuery<GeneralAPIResponse>(
+    [QueryKey.GENERAL],
+    getGeneral,
+  );
   const footerQuery = createQuery<Footer>([QueryKey.FOOTER], () =>
     getFooter(locale),
   );
   const navigationQuery = createQuery<Navigation>([QueryKey.NAVIGATION], () =>
     getNavigation(locale),
   );
+  const menuQuery = createQuery<MenuAPIResponse>([QueryKey.MENU], () =>
+    getMenu(locale),
+  );
 
-  const queries = [generalQuery, footerQuery, navigationQuery];
+  const queries = [generalQuery, footerQuery, navigationQuery, menuQuery];
 
   return {
     queries,
@@ -22,8 +34,8 @@ const getQueries = (createQuery: CreateQueryMethod, locale: Locales) => {
 };
 
 export const useGetInitialQueries = async (locale: Locales) => {
-  const { createQuery, getDehydratedState } = useCreateQuery();
-  const { queries } = getQueries(createQuery, locale);
+  const { prefetchQuery, getDehydratedState } = usePrefetchQuery();
+  const { queries } = getQueries(prefetchQuery, locale);
 
   await Promise.all(queries);
 

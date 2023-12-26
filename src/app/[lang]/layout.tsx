@@ -19,7 +19,7 @@ const inter = Montserrat({
 
 type Props = {
   children?: ReactNode;
-  params: { lang: string };
+  params: { lang: Locales };
 };
 
 async function i18nDictionary(locale: Locales) {
@@ -31,7 +31,7 @@ async function i18nDictionary(locale: Locales) {
 }
 
 const RootLayout: FC<Props> = async ({ children, params }) => {
-  const locale = params.lang as Locales;
+  const locale = params.lang;
   const i18n = await i18nDictionary(locale ?? baseLocale);
   const { dehydratedState } = await useGetInitialQueries(i18n.locale);
 

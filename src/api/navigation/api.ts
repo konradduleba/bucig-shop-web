@@ -4,12 +4,14 @@ import { Navigation } from '@types';
 
 import { Locales } from '@i18n';
 
-import { GraphqlResponse } from '../types';
-import { createGraphqlGetQuery } from '../utils';
+import { GraphqlResponse } from '@api';
+
 import { QueryKey } from '../query-key';
 
+import { createGraphqlGetQuery } from '../utils';
+
 const navigationAttributes = `
-  menu {
+  links {
     id
     title
     href

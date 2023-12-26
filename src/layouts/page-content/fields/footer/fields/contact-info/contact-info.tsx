@@ -1,19 +1,17 @@
 import { FC } from 'react';
 import cn from 'classnames';
 
-import { useInitialStateProvider } from '@providers';
-
 import CustomLink from '@components/custom-link/custom-link';
 import Typography from '@components/typography';
 
 import { Section } from '@layouts';
 
+import { useMapContactInfo } from './hooks';
+
 import styles from './contact-info.module.scss';
 
 export const ContactInfo: FC = () => {
-  const {
-    footer: { contact },
-  } = useInitialStateProvider();
+  const { contact } = useMapContactInfo();
 
   return (
     <Section className={styles.container}>

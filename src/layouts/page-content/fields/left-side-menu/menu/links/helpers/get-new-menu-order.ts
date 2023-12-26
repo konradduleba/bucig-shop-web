@@ -1,6 +1,9 @@
-import { LinkIds, MenuLink } from '@types';
+import { Link, MenuLink } from '@types';
 
-export const getNewMenuOrder = (menu: MenuLink[], activePhotoKey: LinkIds) => {
+export const getNewMenuOrder = (
+  menu: MenuLink[],
+  activePhotoKey: Link['id'],
+) => {
   const indexOfElement = menu.findIndex(({ id }) => id === activePhotoKey);
 
   if (indexOfElement === -1) {

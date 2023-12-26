@@ -2,22 +2,19 @@
 
 import { useState } from 'react';
 
-import { useGetMenuList } from '@hooks';
-import { LinkIds } from '@types';
+import { useCheckPath } from '@hooks';
 
-import { ActivePath, ActivePathHook } from '../links.types';
+import { Link, MenuLink } from '@types';
 
-import { useGetPath } from './useGetPath';
-
-import { getActiveMenuData } from '../helpers/get-active-menu-data';
+import { ActivePathHook } from '../links.types';
 
 export const useActivePath = (): ActivePathHook => {
-  const path = useGetPath();
-  const { elements } = useGetMenuList();
-  const [activePath, setActivePath] = useState<ActivePath>(path);
+  const { currentPath, getSelectedPath } = useCheckPath();
 
-  const onUpdateActivePath = (key: LinkIds) => {
-    const selectedPath = getActiveMenuData(elements, key);
+  const [activePath, setActivePath] = useState<MenuLink>(currentPath);
+
+  const onUpdateActivePath = (pathId: Link['id']) => {
+    const selectedPath = getSelectedPath(pathId);
 
     return setActivePath(selectedPath);
   };
