@@ -4,22 +4,17 @@ import { Footer } from '@types';
 
 import { Locales } from '@i18n';
 
-import { GraphqlResponse } from '../types';
-import { createGraphqlGetQuery } from '../utils';
+import { GraphqlResponse } from '@api';
+
 import { QueryKey } from '../query-key';
 
+import { createGraphqlGetQuery } from '../utils';
+
 const footerAttributes = `
-  menu {
+  links {
     id
     title
     href
-    isExternal
-  }
-  contact {
-    id
-    title
-    href
-    value
     isExternal
   }
 `;

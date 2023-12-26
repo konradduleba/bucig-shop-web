@@ -1,19 +1,7 @@
-import { LinkProps } from '@components/custom-link/custom-link';
+import { Link } from '@types';
 
-type ContactItem = Pick<LinkProps, 'id' | 'href' | 'title'> & {
-  value: string;
-  isExternal: boolean;
-};
-
-type Contact = ContactItem[];
-
-type MenuLink = Pick<LinkProps, 'id' | 'href' | 'title'> & {
-  isExternal: boolean;
-};
-
-type Menu = MenuLink[];
+type FooterLink = Pick<Link, 'id' | 'href' | 'title' | 'isExternal'>;
 
 export interface Footer {
-  contact: Contact;
-  menu: Menu;
+  links: FooterLink[];
 }

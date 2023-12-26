@@ -1,0 +1,1 @@
+export { useMapContactInfo } from './useMapContactInfo';

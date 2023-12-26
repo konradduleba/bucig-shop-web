@@ -2,7 +2,7 @@
 
 import { createContext } from 'react';
 
-import { Footer, General, Navigation, ScreenTypes } from '@types';
+import { Footer, General, Menu, Navigation, ScreenTypes } from '@types';
 
 export const InitialStateContext = createContext<
   | {
@@ -10,6 +10,7 @@ export const InitialStateContext = createContext<
       screenTypes: ScreenTypes;
       general: General;
       navigation: Navigation;
+      menu: Menu;
     }
   | undefined
 >(undefined);

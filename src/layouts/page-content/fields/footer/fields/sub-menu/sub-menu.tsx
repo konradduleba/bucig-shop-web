@@ -11,13 +11,13 @@ import styles from './sub-menu.module.scss';
 
 export const SubMenu: FC = () => {
   const {
-    footer: { menu },
+    footer: { links },
   } = useInitialStateProvider();
 
   return (
     <Section className={styles.container}>
       <ul className={styles.list}>
-        {menu.map(({ href, id, title, isExternal }) => (
+        {links.map(({ href, id, title, isExternal }) => (
           <li key={id} className={styles.element}>
             <CustomLink
               href={href}

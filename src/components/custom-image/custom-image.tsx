@@ -1,9 +1,13 @@
 import Image, { ImageProps } from 'next/image';
 import { FC } from 'react';
 
+import { Link } from '@types';
+
 import styles from './custom-image.module.scss';
 
-type CustomImageProps = Pick<ImageProps, 'alt' | 'src'>;
+type CustomImageProps = Pick<ImageProps, 'alt'> & {
+  src: Link['href'];
+};
 
 const sizes: ImageProps['sizes'] = '100%';
 

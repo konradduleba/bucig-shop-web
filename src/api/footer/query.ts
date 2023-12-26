@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Locales } from '@i18n';
 
 import { QueryKey } from '../query-key';
+
 import { getFooter } from './api';
 import { extractAttributesFromGraphqlData } from '../utils';
 
