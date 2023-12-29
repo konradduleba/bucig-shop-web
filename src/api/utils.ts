@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request';
+import request, { gql } from 'graphql-request';
 
 import { Locales } from '@i18n';
 
@@ -12,13 +12,10 @@ import {
 } from '@api';
 import { Metadata } from 'next';
 
-const updateImageSrc = (image: Image): Image => {
-  const imageSrc = `${process.env.NEXT_PUBLIC_API_URL_ASSETS}${image.url}`;
-
-  return {
-    ...image,
-    url: imageSrc,
-  };
+export const getRequest = <Type>(
+  query: string,
+): Promise<GraphqlResponse<Type>> => {
+  return request(`${process.env.NEXT_PUBLIC_API_URL}`, query);
 };
 
 export const extractAttributesFromGraphqlData = <AttributesType>(
@@ -38,7 +35,7 @@ export const extractImageAttributesFromGraphqlData = (
     return undefined;
   }
 
-  return updateImageSrc(data.data.attributes);
+  return data.data.attributes;
 };
 
 export const extractSeoMetadata = <DataType>(
