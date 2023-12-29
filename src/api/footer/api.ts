@@ -1,5 +1,3 @@
-import request from 'graphql-request';
-
 import { Footer } from '@types';
 
 import { Locales } from '@i18n';
@@ -8,7 +6,7 @@ import { GraphqlResponse } from '@api';
 
 import { QueryKey } from '../query-key';
 
-import { createGraphqlGetQuery } from '../utils';
+import { createGraphqlGetQuery, getRequest } from '../utils';
 
 const footerAttributes = `
   links {
@@ -22,8 +20,10 @@ const footerAttributes = `
 export const getFooter = async (
   locale: Locales,
 ): Promise<GraphqlResponse<Footer>> => {
-  return request(
-    `${process.env.NEXT_PUBLIC_API_URL}`,
-    createGraphqlGetQuery(QueryKey.FOOTER, footerAttributes, locale),
+  const query = createGraphqlGetQuery(
+    QueryKey.FOOTER,
+    footerAttributes,
+    locale,
   );
+  return getRequest(query);
 };

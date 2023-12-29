@@ -1,5 +1,3 @@
-import request from 'graphql-request';
-
 import { Navigation } from '@types';
 
 import { Locales } from '@i18n';
@@ -8,7 +6,7 @@ import { GraphqlResponse } from '@api';
 
 import { QueryKey } from '../query-key';
 
-import { createGraphqlGetQuery } from '../utils';
+import { createGraphqlGetQuery, getRequest } from '../utils';
 
 const navigationAttributes = `
   links {
@@ -22,8 +20,10 @@ const navigationAttributes = `
 export const getNavigation = async (
   locale: Locales,
 ): Promise<GraphqlResponse<Navigation>> => {
-  return request(
-    `${process.env.NEXT_PUBLIC_API_URL}`,
-    createGraphqlGetQuery(QueryKey.NAVIGATION, navigationAttributes, locale),
+  const query = createGraphqlGetQuery(
+    QueryKey.NAVIGATION,
+    navigationAttributes,
+    locale,
   );
+  return getRequest(query);
 };
