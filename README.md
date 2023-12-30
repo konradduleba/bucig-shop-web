@@ -12,6 +12,7 @@ Right now you have to manually clone the project and configure but in the neares
 
 ### Already done
 
+18.12.2023:
 1. Setup project on NextJS using app routing.
 2. Create base components/providers like typography/ui elements.
 3. Add static sections like navigation/menu/footer.
@@ -22,9 +23,11 @@ Right now you have to manually clone the project and configure but in the neares
 8. Create robots and sitemaps files.
 9. Add animations ie. page transitions.
 
+30.12.2023:
+1. Connect STRAPI to the frontend
+2. Upload NextJS and Strapi into custom domain
+   
 ### Next steps
-
-- Connect STRAPI to the frontend
 - Create POC for product configuration and his preview in 3D using ThreeJS
 - Fill the page with an example products
 - Create user's dashboard page (loggin via apple/google)
@@ -44,7 +47,8 @@ Right now you have to manually clone the project and configure but in the neares
 - Typesafe I18n
 - React Hook Form
 - STRAPI
-- Vercel
+- GraphQL
+- MySQL
 
 ## Authors
 
