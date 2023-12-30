@@ -1,14 +1,13 @@
 import { AnimatePresence, AnimationLifecycles, motion } from 'framer-motion';
 import { FC, PropsWithChildren } from 'react';
-
-import { LinkIds } from '@types';
+import { Link } from '@types';
 
 import { variants } from './variants';
 
 import styles from './preview-animation.module.scss';
 
 interface PreviewAnimationProps {
-  activeKey: LinkIds;
+  activeKey: Link['id'];
   onAnimationComplete: AnimationLifecycles['onAnimationComplete'];
 }
 
