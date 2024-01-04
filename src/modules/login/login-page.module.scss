@@ -6,15 +6,9 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  // filter: blur(6px);
 
-  @include tablet-lg-up {
+  @include tablet-lg-up() {
     height: 100vh;
     padding: 0;
-  }
-
-  &:before {
-    content: '';
-    filter: blur(6px);
   }
 }
