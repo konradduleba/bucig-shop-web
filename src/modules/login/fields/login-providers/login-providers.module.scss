@@ -1,0 +1,13 @@
+@use './../../../../styles/breakpoints' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  @include tablet-sm-up() {
+    flex-direction: row;
+    gap: 40px;
+  }
+}

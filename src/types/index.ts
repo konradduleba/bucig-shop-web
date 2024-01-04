@@ -7,3 +7,4 @@ export * from './navigation';
 export * from './image';
 export * from './menu';
 export * from './home';
+export * from './login';

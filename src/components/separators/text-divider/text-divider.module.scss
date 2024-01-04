@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: 45% 1fr 45%;
+  align-items: center;
+  gap: 8px;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-rgb);
+}
+
+.text {
+  text-align: center;
+}

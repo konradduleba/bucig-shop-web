@@ -3,7 +3,7 @@
 import { PageWrapper, Section } from '@layouts';
 
 import Typography from '@components/typography';
-import ActionButton from '@components/buttons/action-button/action-button';
+import { ActionButton } from '@components/buttons/action-button/action-button';
 import CustomLink from '@components/custom-link/custom-link';
 
 import { useI18nContext } from '@i18n';

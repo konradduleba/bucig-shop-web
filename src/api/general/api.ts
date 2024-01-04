@@ -1,6 +1,6 @@
 import { GeneralAPIResponse } from '@types';
 
-import { QueryKey } from '../query-key';
+import { ImageKey, QueryKey } from '../query-key';
 
 import { GraphqlResponse } from '@api';
 
@@ -12,7 +12,7 @@ import {
 
 const generalAttributes = `
   companyName
-  ${getImageAttributes(QueryKey.LOGO)}
+  ${getImageAttributes(ImageKey.LOGO)}
   email
   phoneNumber
   openHours {

@@ -4,8 +4,9 @@ import { Locales } from '@i18n';
 
 import { QueryKey, getHome, extractSeoMetadata } from '@api';
 
+import { getQueryClient } from '@providers';
+
 import { Home } from './home';
-import { getQueryClient } from '../../providers/query-provider/helpers';
 
 const HOME_METADATA_FALLBACK: Metadata = {
   title: 'Bucig - Fallback title',
