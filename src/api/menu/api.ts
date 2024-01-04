@@ -2,7 +2,7 @@ import { MenuAPIResponse } from '@types';
 
 import { Locales } from '@i18n';
 
-import { QueryKey } from '../query-key';
+import { ImageKey, QueryKey } from '../query-key';
 
 import { GraphqlResponse } from '../types';
 
@@ -17,7 +17,7 @@ const menuAttributes = `
     id
     href
     title
-    ${getImageAttributes(QueryKey.IMAGE)}
+    ${getImageAttributes(ImageKey.IMAGE)}
     isExternal
     isVisible
   }

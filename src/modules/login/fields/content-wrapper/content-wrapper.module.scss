@@ -1,0 +1,23 @@
+@use '../../../../styles/breakpoints' as *;
+
+.container {
+  @include tablet-lg-up() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 30px;
+
+  @include tablet-lg-up() {
+    gap: 50px;
+  }
+}

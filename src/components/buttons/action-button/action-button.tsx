@@ -1,15 +1,20 @@
 import { FC, PropsWithChildren } from 'react';
-import { Button } from '../button/button';
 import cn from 'classnames';
 
-import styles from './action-button.module.scss';
+import { Button } from '../button/button';
+
 import SvgArrowRightThick from '@icons/arrow-right-thick';
 
-interface ActionButtonProps extends PropsWithChildren {
+import styles from './action-button.module.scss';
+
+interface ActionButtonProps {
   className?: string;
 }
 
-const ActionButton: FC<ActionButtonProps> = ({ className, children }) => {
+export const ActionButton: FC<PropsWithChildren<ActionButtonProps>> = ({
+  className,
+  children,
+}) => {
   return (
     <Button className={cn(styles.button, className)}>
       <div className={styles.content}>
@@ -21,5 +26,3 @@ const ActionButton: FC<ActionButtonProps> = ({ className, children }) => {
     </Button>
   );
 };
-
-export default ActionButton;

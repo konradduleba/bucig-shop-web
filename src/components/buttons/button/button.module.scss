@@ -1,13 +1,10 @@
 @use './button-reset' as *;
-
-$button-transition:
-  color 0.1s ease-in-out,
-  background-color 0.1s ease-in-out,
-  border-color 0.1s ease-in-out,
-  opacity 0.1s ease-in-out;
+@use '../../../styles/mixins' as *;
 
 .button {
   @include button-reset;
+  @include button-transition;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -16,7 +13,6 @@ $button-transition:
   line-height: 24px;
   border-radius: 6px;
   padding: 5px 16px;
-  transition: $button-transition;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -29,6 +25,7 @@ $button-transition:
 
 .iconButton {
   @include button-reset;
+  @include button-transition;
 
   display: flex;
   justify-content: center;
@@ -36,7 +33,6 @@ $button-transition:
   width: 36px;
   height: 36px;
   border-radius: 6px;
-  transition: $button-transition;
   font-size: 20px;
   &:disabled {
     cursor: default;

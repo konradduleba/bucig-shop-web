@@ -1,0 +1,32 @@
+@use '../../../../../../styles/mixins' as *;
+@use '../../../../../../styles/breakpoints' as *;
+
+.button {
+  --text-color: var(--border-rgb);
+
+  display: grid !important;
+  grid-template-columns: 40px 1fr !important;
+  border: 1px solid var(--text-color) !important;
+  border-radius: unset !important;
+  padding: 16px !important;
+
+  @include desktop-only() {
+    width: fit-content !important;
+
+    &:hover {
+      --text-color: var(--primary-2) !important;
+    }
+  }
+}
+
+.text {
+  text-align: left !important;
+  color: var(--primary-2) !important;
+  font-weight: 500 !important;
+
+  @include desktop-only() {
+    color: var(--text-color) !important;
+  }
+
+  @include button-transition;
+}

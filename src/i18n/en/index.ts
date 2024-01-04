@@ -33,6 +33,15 @@ const en: Translation = {
   SEO: {
     LOGIN_ARIA_LABEL: 'Login into your account',
   },
+  LOGIN: {
+    TITLE: 'Login',
+    FORGET_PASSWORD: 'Forget your password?',
+    REGISTER: 'Register',
+    SUBMIT_BUTTON: 'Login',
+    OR: 'or',
+    SIGN_IN_WITH_GOOGLE: 'Sign in with Google',
+    SIGN_IN_WITH_GITHUB: 'Sign in with Github',
+  },
 };
 
 export default en;

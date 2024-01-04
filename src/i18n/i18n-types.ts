@@ -47,6 +47,15 @@ type RootTranslation = {
   SEO: {
     LOGIN_ARIA_LABEL: string;
   };
+  LOGIN: {
+    TITLE: string;
+    FORGET_PASSWORD: string;
+    REGISTER: string;
+    SUBMIT_BUTTON: string;
+    OR: string;
+    SIGN_IN_WITH_GOOGLE: string;
+    SIGN_IN_WITH_GITHUB: string;
+  };
 };
 
 export type TranslationFunctions = {
@@ -80,6 +89,15 @@ export type TranslationFunctions = {
   };
   SEO: {
     LOGIN_ARIA_LABEL: () => LocalizedString;
+  };
+  LOGIN: {
+    TITLE: () => LocalizedString;
+    FORGET_PASSWORD: () => LocalizedString;
+    REGISTER: () => LocalizedString;
+    SUBMIT_BUTTON: () => LocalizedString;
+    OR: () => LocalizedString;
+    SIGN_IN_WITH_GOOGLE: () => LocalizedString;
+    SIGN_IN_WITH_GITHUB: () => LocalizedString;
   };
 };
 

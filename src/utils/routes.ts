@@ -5,7 +5,9 @@ export const ROUTES = {
   MESSAGE_US: () => '/message-us',
   CONFIGURATOR: () => '/configurator',
   JOIN_US: () => '/join-us',
-  LOGIN: () => '/auth/login',
+  LOGIN: () => '/login',
   PRIVACY_POLICY: () => '/private-policy',
   FAVOURITES: () => '/favourites',
+  RECOVER_PASSWORD: () => '/recover-password',
+  REGISTER: () => '/register',
 };

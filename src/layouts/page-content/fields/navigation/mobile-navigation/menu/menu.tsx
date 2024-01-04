@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Portal from '@components/portal/portal';
-import Divider from '@components/divider/divider';
+import { Divider } from '@components/separators';
 
 import { useDisableBodyScroll, useVisibleToggle } from '@hooks';
 

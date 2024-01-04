@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import IconButton from '@components/buttons/icon-button/icon-button';
+import { IconButton } from '@components/buttons';
 import IconSwapper from '@components/icon-swapper/icon-swapper';
 
 import SvgClose from '@icons/close';

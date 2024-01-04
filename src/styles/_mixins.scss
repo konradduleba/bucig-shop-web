@@ -54,3 +54,11 @@
   display: grid;
   row-gap: $gap;
 }
+
+@mixin button-transition {
+  transition:
+    color 0.1s ease-in-out,
+    background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out,
+    opacity 0.1s ease-in-out;
+}

@@ -3,7 +3,7 @@
 import { FC } from 'react';
 
 import IconHover from '@components/icon-hover/icon-hover';
-import IconButton from '@components/buttons/icon-button/icon-button';
+import { IconButton } from '@components/buttons';
 
 import { EXTERNAL_LINK_LIST, ExternalLinkList } from './external-links.consts';
 

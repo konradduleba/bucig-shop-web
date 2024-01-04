@@ -1,0 +1,10 @@
+@use '../../../../styles/breakpoints' as *;
+
+.form {
+  display: grid;
+  gap: 30px;
+
+  @include tablet-lg-up() {
+    width: 600px;
+  }
+}
