@@ -26,11 +26,14 @@ Right now you have to manually clone the project and configure but in the neares
 30.12.2023:
 1. Connect STRAPI to the frontend
 2. Upload NextJS and Strapi into custom domain
+
+05.01.2024:
+1. Add ability to login via Google and Github providers
    
 ### Next steps
 - Create POC for product configuration and his preview in 3D using ThreeJS
 - Fill the page with an example products
-- Create user's dashboard page (loggin via apple/google)
+- Create user's dashboard page
 - Add ability to pay for the product via credit card
 
 ### Final step
@@ -41,6 +44,7 @@ Right now you have to manually clone the project and configure but in the neares
 ## Tech stack
 
 - NextJS
+- NextAuthJS
 - TypeScript
 - ThreeJS
 - Framer Motion
