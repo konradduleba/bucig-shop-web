@@ -7,11 +7,12 @@ import styles from './sign-in.module.scss';
 interface SignInProps {
   renderIcon: () => JSX.Element;
   text: string;
+  onClick: () => void;
 }
 
-export const SignIn: FC<SignInProps> = ({ renderIcon, text }) => {
+export const SignIn: FC<SignInProps> = ({ renderIcon, text, onClick }) => {
   return (
-    <Button className={styles.button}>
+    <Button className={styles.button} onClick={onClick}>
       {renderIcon()}
       <Typography.Text size="16" className={styles.text}>
         {text}

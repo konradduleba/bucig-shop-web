@@ -32,7 +32,8 @@
       "@forms": ["./src/forms/index.ts"],
       "@hooks": ["./src/hooks/index.ts"],
       "@api": ["./src/api/index.ts"],
-      "@modules/*": ["./src/modules/*"]
+      "@modules/*": ["./src/modules/*"],
+      "@guards": ["./src/guards/index.ts"]
     }
   },
   "include": [

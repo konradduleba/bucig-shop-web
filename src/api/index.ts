@@ -6,4 +6,5 @@ export * from './home';
 export * from './login';
 export { QueryKey } from './query-key';
 export * from './types';
+export { authConfig } from './auth';
 export { extractSeoMetadata } from './utils';

@@ -11,3 +11,7 @@ export const ROUTES = {
   RECOVER_PASSWORD: () => '/recover-password',
   REGISTER: () => '/register',
 };
+
+export const PROTECTED_ROUTES = {
+  DASHBOARD: () => '/auth/dashboard',
+};
