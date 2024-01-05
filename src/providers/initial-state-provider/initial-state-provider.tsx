@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, PropsWithChildren } from 'react';
+import { useSession } from 'next-auth/react';
 
 import {
   useGetFooter,
@@ -19,6 +20,7 @@ import { InitialStateContext } from './initial-state-context';
 
 export const InitialStateProvider: FC<PropsWithChildren> = ({ children }) => {
   const { locale } = useI18nContext();
+  const { status: sessionStatus } = useSession();
 
   const general = useGetGeneral();
   const footer = useGetFooter(locale);
@@ -27,7 +29,12 @@ export const InitialStateProvider: FC<PropsWithChildren> = ({ children }) => {
   const { screenTypes } = useGetScreenTypes();
 
   const isDataLoaded =
-    !!footer && !!screenTypes && !!general && !!navigation && !!menu;
+    !!footer &&
+    !!screenTypes &&
+    !!general &&
+    !!navigation &&
+    !!menu &&
+    sessionStatus !== 'loading';
 
   if (!isDataLoaded) {
     return <Loader />;

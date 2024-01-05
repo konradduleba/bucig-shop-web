@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { Montserrat } from 'next/font/google';
+import { Session } from 'next-auth';
 
 import { Locales } from '../../i18n/i18n-types';
 import { loadLocaleAsync } from '../../i18n/i18n-util.async';
@@ -19,7 +20,7 @@ const inter = Montserrat({
 
 type Props = {
   children?: ReactNode;
-  params: { lang: Locales };
+  params: { lang: Locales; session: Session };
 };
 
 async function i18nDictionary(locale: Locales) {
@@ -41,6 +42,7 @@ const RootLayout: FC<Props> = async ({ children, params }) => {
         locale={i18n.locale}
         translation={i18n.dictionary}
         dehydratedState={dehydratedState}
+        session={params.session}
       >
         {children}
       </ClientComponent>

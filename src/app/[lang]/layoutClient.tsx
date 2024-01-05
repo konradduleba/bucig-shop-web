@@ -2,6 +2,8 @@
 
 import { ReactNode } from 'react';
 import { DehydratedState, HydrationBoundary } from '@tanstack/react-query';
+import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth';
 
 import {
   Locales,
@@ -15,11 +17,14 @@ import { QueryProvider, InitialStateProvider } from '@providers';
 
 import { PageContent } from '@layouts';
 
+import { ProtectedRoutesGuard } from '@guards';
+
 interface Props {
   children: ReactNode;
   locale: Locales;
   translation: Translation;
   dehydratedState: DehydratedState;
+  session: Session;
 }
 
 export default function ClientComponent({
@@ -27,6 +32,7 @@ export default function ClientComponent({
   locale,
   translation,
   dehydratedState,
+  session,
 }: Props) {
   loadedLocales[locale] = translation;
   i18nAsync.loadFormatters(locale);
@@ -34,13 +40,17 @@ export default function ClientComponent({
   return (
     <TypesafeI18n locale={locale}>
       <body>
-        <QueryProvider>
-          <HydrationBoundary state={dehydratedState}>
-            <InitialStateProvider>
-              <PageContent>{children}</PageContent>
-            </InitialStateProvider>
-          </HydrationBoundary>
-        </QueryProvider>
+        <SessionProvider session={session}>
+          <ProtectedRoutesGuard>
+            <QueryProvider>
+              <HydrationBoundary state={dehydratedState}>
+                <InitialStateProvider>
+                  <PageContent>{children}</PageContent>
+                </InitialStateProvider>
+              </HydrationBoundary>
+            </QueryProvider>
+          </ProtectedRoutesGuard>
+        </SessionProvider>
       </body>
     </TypesafeI18n>
   );

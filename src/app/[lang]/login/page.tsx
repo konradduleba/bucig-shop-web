@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { Locales } from '@i18n';
 
-import { QueryKey, getHome, extractSeoMetadata, getLogin } from '@api';
+import { QueryKey, extractSeoMetadata, getLogin } from '@api';
 
 import { getQueryClient } from '@providers';
 
