@@ -16,12 +16,10 @@ export const authConfig: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    // This method is not invoked when you persist sessions in a database.
     async jwt({ token, account }) {
       if (account) {
-        const res = await fetch(
-          `${process.env.STRAPI_BACKEND_URL}/api/auth/${account.provider}/callback?access_token=${account.access_token}`,
-        );
+        const url = `${process.env.STRAPI_BACKEND_URL}/api/auth/${account.provider}/callback?access_token=${account.access_token}`;
+        const res = await fetch(url);
         const data = await res.json();
         const { jwt, user } = data;
         token.accessToken = jwt;
@@ -30,8 +28,7 @@ export const authConfig: NextAuthOptions = {
       return token;
     },
 
-    async session({ session, token, user }) {
-      // Send properties to the client, like an access_token from a provider.
+    async session({ session, token }) {
       session.user.accessToken = token.accessToken as string;
       session.user.userId = token.userId as number;
       return session;
@@ -41,7 +38,4 @@ export const authConfig: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
-  // pages: {
-  //   signIn: '//login',
-  // },
 };

@@ -5,7 +5,6 @@ import { PROTECTED_ROUTES, getLocale } from '@utils';
 
 export const checkUserDashboardAccess = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
-  console.log('pathname', pathname);
   const locale = getLocale(request);
   const token = await getToken({
     secret: process.env.NEXTAUTH_SECRET,
