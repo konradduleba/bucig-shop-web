@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-import { ROUTES } from '@utils';
+import { ROUTES } from '../utils/routes';
 
 const CURRENTLY_AVAILABLE_SLUGS = [
   ROUTES.HOME(),
