@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes, ReactNode, useId } from 'react';
 import { useController } from 'react-hook-form';
 
-import { TextInput, Variant } from '../../components';
+import { ErrorFieldWrapper, TextInput } from '../../components';
 
 import styles from './form-input.module.scss';
 
@@ -22,7 +22,6 @@ export type InputProps = {
   autoComplete?: string;
   labelIcon?: ReactNode;
   displayCounter?: boolean;
-  variant?: Variant;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const FormInput: React.FC<InputProps> = ({
@@ -51,6 +50,9 @@ export const FormInput: React.FC<InputProps> = ({
   const generatedId = useId();
   const inputId = id || generatedId;
 
+  const errorText =
+    errorMessage ?? (fieldState?.error?.message && fieldState.error.message);
+
   return (
     <div className={styles.container}>
       {label && (
@@ -61,6 +63,7 @@ export const FormInput: React.FC<InputProps> = ({
           </label>
           {!hint && displayCounter && maxLength ? (
             <span className={styles.helperText}>
+              {/*TODO: add NumberLocale*/}
               {maxLength - (field.value?.length ?? 0)}
             </span>
           ) : null}
@@ -89,6 +92,13 @@ export const FormInput: React.FC<InputProps> = ({
           onBlur?.(e);
         }}
       />
+      {errorText && (
+        <ErrorFieldWrapper
+          selectorName={name}
+          message={errorText}
+          className={styles.error}
+        />
+      )}
     </div>
   );
 };

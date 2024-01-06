@@ -18,9 +18,6 @@ const en: Translation = {
     EMAIL: 'e-mail',
     OPEN_HOURS: 'schedule',
   },
-  VALIDATION: {
-    PASSWORD_MUST_CONTAIN: 'Password must contain',
-  },
   ERROR: {
     NOT_FOUND_TITLE: 'Page does not exist.',
     NOT_FOUND_DESCRIPTION:
@@ -41,6 +38,10 @@ const en: Translation = {
     OR: 'or',
     SIGN_IN_WITH_GOOGLE: 'Sign in with Google',
     SIGN_IN_WITH_GITHUB: 'Sign in with Github',
+    PASSWORD: 'Password',
+  },
+  VALIDATION: {
+    REQUIRED: '{field} is required',
   },
 };
 

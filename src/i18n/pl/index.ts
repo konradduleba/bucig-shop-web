@@ -18,9 +18,6 @@ const pl: Translation = {
     EMAIL: 'e-mail',
     OPEN_HOURS: 'Dostępność',
   },
-  VALIDATION: {
-    PASSWORD_MUST_CONTAIN: 'Hasło musi zawierać',
-  },
   CREDITS: {
     AUTHOR: 'Stworzone przez',
   },
@@ -41,6 +38,10 @@ const pl: Translation = {
     OR: 'lub',
     SIGN_IN_WITH_GOOGLE: 'Zaloguj się kontem Google',
     SIGN_IN_WITH_GITHUB: 'Zaloguj się kontem Github',
+    PASSWORD: 'Hasło',
+  },
+  VALIDATION: {
+    REQUIRED: '{field} jest wymagane',
   },
 };
 

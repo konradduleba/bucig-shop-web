@@ -30,31 +30,31 @@ export const passwordValidationSchema = yup.object({
 
 export const validatePassword = (
   password: string,
-): Array<{ id: string; translationKey: string; isValid: boolean }> => {
+): Array<{ id: string; message: string; isValid: boolean }> => {
   return [
     {
       id: 'passwordValidation.minLength',
-      translationKey: 'WEB_generic.validation.password.minLength',
+      message: 'WEB_generic.validation.password.minLength',
       isValid: password?.length >= MIN_PASSWORD_LENGTH,
     },
     {
       id: 'passwordValidation.maxLength',
-      translationKey: 'WEB_generic.validation.password.maxLength',
+      message: 'WEB_generic.validation.password.maxLength',
       isValid: password?.length <= MAX_PASSWORD_LENGTH,
     },
     {
       id: 'passwordValidation.letter',
-      translationKey: 'WEB_generic.validation.password.letter',
+      message: 'WEB_generic.validation.password.letter',
       isValid: letterRegex.test(password),
     },
     {
       id: 'passwordValidation.number',
-      translationKey: 'WEB_generic.validation.password.number',
+      message: 'WEB_generic.validation.password.number',
       isValid: numberRegex.test(password),
     },
     {
       id: 'passwordValidation.specialCharacter',
-      translationKey: 'WEB_generic.validation.password.specialCharacter',
+      message: 'WEB_generic.validation.password.specialCharacter',
       isValid: specialCharacterRegex.test(password),
     },
   ];

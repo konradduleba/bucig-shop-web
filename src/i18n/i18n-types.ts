@@ -4,6 +4,7 @@ import { LinkProps } from 'next/link';
 import type {
   BaseTranslation as BaseTranslationType,
   LocalizedString,
+  RequiredParams,
 } from 'typesafe-i18n';
 
 export type BaseTranslation = BaseTranslationType;
@@ -33,9 +34,6 @@ type RootTranslation = {
     ADDRESS: string;
     OPEN_HOURS: string;
   };
-  VALIDATION: {
-    PASSWORD_MUST_CONTAIN: string;
-  };
   ERROR: {
     NOT_FOUND_TITLE: string;
     NOT_FOUND_DESCRIPTION: string;
@@ -55,6 +53,13 @@ type RootTranslation = {
     OR: string;
     SIGN_IN_WITH_GOOGLE: string;
     SIGN_IN_WITH_GITHUB: string;
+    PASSWORD: string;
+  };
+  VALIDATION: {
+    /**
+     * @param {string} field
+     */
+    REQUIRED: RequiredParams<string>;
   };
 };
 
@@ -76,9 +81,6 @@ export type TranslationFunctions = {
     ADDRESS: () => LocalizedString;
     OPEN_HOURS: () => LocalizedString;
   };
-  VALIDATION: {
-    PASSWORD_MUST_CONTAIN: () => LocalizedString;
-  };
   CREDITS: {
     AUTHOR: () => LocalizedString;
   };
@@ -98,6 +100,10 @@ export type TranslationFunctions = {
     OR: () => LocalizedString;
     SIGN_IN_WITH_GOOGLE: () => LocalizedString;
     SIGN_IN_WITH_GITHUB: () => LocalizedString;
+    PASSWORD: () => LocalizedString;
+  };
+  VALIDATION: {
+    REQUIRED: (arg: { field: string }) => LocalizedString;
   };
 };
 

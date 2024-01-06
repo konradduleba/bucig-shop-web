@@ -2,23 +2,29 @@ import type { PropsWithChildren } from 'react';
 import { useCallback } from 'react';
 import { useController, useFormContext } from 'react-hook-form';
 
-import { ErrorFieldWrapper, Toggle } from '../../components';
+import { Checkbox, CheckboxSize, ErrorFieldWrapper } from '../../components';
 
-import styles from './form-toggle.module.scss';
+import styles from './form-checkbox.module.scss';
 
-export type FormToggleProps = PropsWithChildren<{
+export type FormCheckboxProps = PropsWithChildren<{
   name: string;
   disabled?: boolean;
   label?: string;
   id?: string;
+  size?: CheckboxSize;
+  isIndeterminated?: boolean;
+  onClick?: (checked: boolean) => void;
 }>;
 
-export const FormToggle: React.FC<FormToggleProps> = ({
+export const FormCheckbox: React.FC<FormCheckboxProps> = ({
   name,
   disabled = false,
   label,
   children,
   id,
+  size,
+  isIndeterminated,
+  onClick,
 }) => {
   const { field, fieldState } = useController({ name });
   const { trigger } = useFormContext();
@@ -27,6 +33,7 @@ export const FormToggle: React.FC<FormToggleProps> = ({
     (checked: boolean) => {
       field.onChange(checked);
       trigger(name);
+      onClick && onClick(checked);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [field.onChange, trigger],
@@ -41,15 +48,18 @@ export const FormToggle: React.FC<FormToggleProps> = ({
           {label}
         </label>
       )}
-      <Toggle
+      <Checkbox
         checked={!!field.value}
         onChangeValue={onChange}
         disabled={disabled}
+        error={!!error}
         id={id}
         name={name}
+        size={size}
+        isIndeterminated={isIndeterminated}
       >
         {children}
-      </Toggle>
+      </Checkbox>
       {error && (
         <ErrorFieldWrapper
           selectorName={name}
@@ -61,4 +71,4 @@ export const FormToggle: React.FC<FormToggleProps> = ({
   );
 };
 
-export default FormToggle;
+export default FormCheckbox;
