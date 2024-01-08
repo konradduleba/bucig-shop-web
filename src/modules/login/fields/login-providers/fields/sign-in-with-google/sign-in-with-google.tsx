@@ -1,8 +1,11 @@
 import { FC } from 'react';
+import { signIn } from 'next-auth/react';
+
+import { PROTECTED_ROUTES } from '@utils';
 
 import SvgGoogle from '@icons/google';
 
-import { signIn } from 'next-auth/react';
+import { SignInProviders } from '@types';
 
 import { useI18nContext } from '@i18n';
 
@@ -14,7 +17,9 @@ export const SignInWithGoogle: FC = () => {
   const { LL } = useI18nContext();
 
   const onSignInWithGoogle = () => {
-    signIn('google');
+    signIn(SignInProviders.GOOGLE, {
+      callbackUrl: PROTECTED_ROUTES.DASHBOARD(),
+    });
   };
 
   return (

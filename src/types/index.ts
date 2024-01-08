@@ -8,3 +8,6 @@ export * from './image';
 export * from './menu';
 export * from './home';
 export * from './login';
+export * from './user';
+export * from './error';
+export * from './sign-in-providers';

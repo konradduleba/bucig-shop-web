@@ -60,6 +60,8 @@ type RootTranslation = {
      * @param {string} field
      */
     REQUIRED: RequiredParams<string>;
+    EMAIL_IS_TAKEN: string;
+    INCORRECT_PASSWORD_OR_LOGIN: string;
   };
 };
 
@@ -104,6 +106,8 @@ export type TranslationFunctions = {
   };
   VALIDATION: {
     REQUIRED: (arg: { field: string }) => LocalizedString;
+    EMAIL_IS_TAKEN: () => LocalizedString;
+    INCORRECT_PASSWORD_OR_LOGIN: () => LocalizedString;
   };
 };
 

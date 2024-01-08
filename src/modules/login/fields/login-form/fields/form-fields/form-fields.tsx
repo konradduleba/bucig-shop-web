@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FormInput } from '@forms';
+import { FormInput, FormPasswordInput } from '@forms';
 
 import { LoginFormFields } from '../../login-form.validation';
 
@@ -7,15 +7,13 @@ export const FormFields: FC = () => {
   return (
     <>
       <FormInput
-        name={LoginFormFields.EMAIL}
+        name={LoginFormFields.IDENTIFIER}
         label="Your email"
-        variant="primary"
-        autoFocus
+        type="email"
       />
-      <FormInput
+      <FormPasswordInput
         name={LoginFormFields.PASSWORD}
         label="Your password"
-        variant="primary"
       />
     </>
   );

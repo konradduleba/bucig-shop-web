@@ -1,0 +1,1 @@
+export { nonAuthorizeApi } from './axios';

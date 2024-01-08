@@ -10,3 +10,8 @@ interface LoginAttributes<ImageType> {
 export type Login = Omit<LoginAttributes<Image>, 'seo'>;
 
 export type LoginAPIResponse = LoginAttributes<DataAttributes<Image>>;
+
+export interface Credentials {
+  identifier: string;
+  password: string;
+}

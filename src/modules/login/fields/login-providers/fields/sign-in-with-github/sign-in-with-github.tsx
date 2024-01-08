@@ -1,8 +1,11 @@
+import { signIn } from 'next-auth/react';
 import { FC } from 'react';
+
+import { SignInProviders } from '@types';
 
 import SvgGithub from '@icons/github';
 
-import { signIn } from 'next-auth/react';
+import { PROTECTED_ROUTES } from '@utils';
 
 import { useI18nContext } from '@i18n';
 
@@ -14,7 +17,9 @@ export const SignInWithGithub: FC = () => {
   const { LL } = useI18nContext();
 
   const onSignInWithGithub = () => {
-    signIn('github');
+    signIn(SignInProviders.GITHUB, {
+      callbackUrl: PROTECTED_ROUTES.DASHBOARD(),
+    });
   };
 
   return (

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const Dashboard: FC = async () => {
   const session = await getServerSession(authConfig);
 
-  console.log(session);
+  console.log('session', session);
 
   return <div>Dashboard</div>;
 };

@@ -4,6 +4,8 @@ import { Login } from '@types';
 
 import { Section } from '@layouts';
 
+import { ErrorBoundaryProvider } from '@providers';
+
 import {
   ContentWrapper,
   LoginForm,
@@ -20,9 +22,11 @@ export const LoginPage: FC<Login> = ({ backgroundImage: { url } }) => {
       style={{ backgroundImage: `url(${url})` }}
     >
       <ContentWrapper>
-        <LoginForm />
-        <OrSeparator />
-        <LoginProviders />
+        <ErrorBoundaryProvider>
+          <LoginForm />
+          <OrSeparator />
+          <LoginProviders />
+        </ErrorBoundaryProvider>
       </ContentWrapper>
     </Section>
   );

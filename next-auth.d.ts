@@ -1,6 +1,7 @@
 // types/next-auth.d.ts
 
 import NextAuth, { DefaultSession } from 'next-auth';
+import { StrapiErrorType } from './src/types';
 
 declare module 'next-auth' {
   /**
@@ -11,5 +12,11 @@ declare module 'next-auth' {
       accessToken: string;
       userId: number;
     } & DefaultSession['user'];
+  }
+
+  interface User {
+    id: number;
+    jwt: string;
+    error?: StrapiErrorType;
   }
 }

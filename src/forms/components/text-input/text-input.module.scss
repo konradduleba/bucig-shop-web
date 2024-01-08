@@ -108,6 +108,10 @@
   border-radius: 0;
 }
 
+.inputError {
+  border-color: var(--status-error);
+}
+
 .formattedMask {
   font-size: 16px;
   color: var(--secondary-5);
