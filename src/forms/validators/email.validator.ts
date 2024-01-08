@@ -4,7 +4,7 @@ import { MAX_EMAIL_LENGTH } from '../constants/validations.constants';
 
 export const createEmailValidationSchema = () =>
   yup.object({
-    email: yup
+    identifier: yup
       .string()
       .email('WEB_generic.validation.email.invalid')
       .max(MAX_EMAIL_LENGTH, {

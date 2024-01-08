@@ -42,6 +42,9 @@ const pl: Translation = {
   },
   VALIDATION: {
     REQUIRED: '{field} jest wymagane',
+    EMAIL_IS_TAKEN:
+      'Istnieje już konto o takim adresie e-mail. Zaloguj się inną metodą lub innym adresem e-mail',
+    INCORRECT_PASSWORD_OR_LOGIN: 'Nieprawidłowy adres e-mail lub hasło',
   },
 };
 

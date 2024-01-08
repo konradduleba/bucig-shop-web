@@ -11,6 +11,7 @@ import {
   ExtractSeoType,
 } from '@api';
 import { Metadata } from 'next';
+import axios from 'axios';
 
 export const getRequest = <Type>(
   query: string,

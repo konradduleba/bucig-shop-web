@@ -1,14 +1,13 @@
 import React, { InputHTMLAttributes, ReactNode, useId } from 'react';
 import { useController } from 'react-hook-form';
 
-import { ErrorFieldWrapper, TextInput } from '../../components';
+import { ErrorFieldWrapper, TextInput, TextInputProps } from '../../components';
 
 import styles from './form-input.module.scss';
 
 export type InputProps = {
   name: string;
   label: string;
-  type?: 'text' | 'number';
   disabled?: boolean;
   hint?: string | undefined;
   prefixText?: string;
@@ -22,6 +21,7 @@ export type InputProps = {
   autoComplete?: string;
   labelIcon?: ReactNode;
   displayCounter?: boolean;
+  variant?: TextInputProps['variant'];
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export const FormInput: React.FC<InputProps> = ({
@@ -43,6 +43,7 @@ export const FormInput: React.FC<InputProps> = ({
   displayCounter,
   onChange,
   onBlur,
+  variant,
   ...rest
 }) => {
   const { field, fieldState } = useController({ name });
@@ -77,6 +78,7 @@ export const FormInput: React.FC<InputProps> = ({
         prefix={prefixText || ''}
         disabled={disabled}
         autoComplete={autoComplete}
+        variant={variant}
         {...field}
         {...rest}
         id={inputId}

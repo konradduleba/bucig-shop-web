@@ -1,0 +1,1 @@
+export { useHandleBoundaryError } from './useHandleBoundaryError';

@@ -42,6 +42,9 @@ const en: Translation = {
   },
   VALIDATION: {
     REQUIRED: '{field} is required',
+    EMAIL_IS_TAKEN:
+      'This e-mail address is already taken. Please use different login method or e-mail',
+    INCORRECT_PASSWORD_OR_LOGIN: 'Invalid e-mail address or password',
   },
 };
 
